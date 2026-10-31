@@ -47,7 +47,7 @@
 | 3. Detail PLTS kritis dengan bukti satelit dan baterai | ✅ | 31 Okt: Parang menampilkan status + alasan + grafik cahaya malam asli (hasil: sinyal lemah); baterai: data BMS tidak ada untuk Parang |
 | 4. Kirim peringatan ke operator | ✅ | 31 Okt: kirim dari P3 Parang → muncul di P5 dan kotak masuk operator (P12) |
 | 5. Operator membaca, menulis keluhan, dipandu atau dieskalasi | ✅ | 31 Okt: P13, panduan baterai dan eskalasi bau gosong |
-| 6. Tandai selesai, status di peta berubah | 🟦 | 31 Okt: Tandai selesai mengubah status di P5; status di peta P2 masih dari plts.json (belum membaca peringatan) |
+| 6. Tandai selesai, status di peta berubah | ✅ | 31 Okt: Tandai selesai di P13 → P2 Parang jadi Dalam pemulihan (metrik, titik abu-abu, tabel, sorotan pindah ke Lakarama). API mati → status dari data + catatan |
 
 ## Halaman
 > Dari 01-PRD §5. Selesai = halaman jalan dengan data nyata + semua state (kosong, loading, error) + responsif.
@@ -97,3 +97,4 @@
 | 31 Okt 2026 | Proposal dipangkas jadi 28 hlm: daftar tabel/gambar dihapus, BAB II dipadatkan (2.1-2.3), 3.3 tanpa daftar langkah, 3.4 Pengguna digabung ke 3.1, BAB IV dipadatkan (nilai aset ke 4.1, emisi jadi paragraf, risiko 6 baris), Tabel 1.1 dua kolom, BAB tidak lagi mulai di halaman baru. Cadangan 36 hlm: snbuild/buat_proposal2_36hlm.py |
 | 31 Okt 2026 | T15, T17, T18 selesai. Wilayah demo lokasi diganti ke Kab. Maluku Barat Daya (3T) atas permintaan user; data BPS Jateng terhalang verifikasi bot. 9 tangkapan layar produksi di `D:/Aplikasi/SENO ITS/purwarupa_tangkapan/`, 6 masuk Lampiran 2 proposal (34 hlm). Proposal 3.4.1 ditulis ulang sesuai metode estimasi |
 | 31 Okt 2026 | Commit awal dan push ke github.com/Orang2-BU/SURYAJAGA (main). T16 selesai: P9 dan P10 |
+| 31 Okt 2026 | Alur inti 6/6: P2 membaca peringatan (`terapkanPeringatan`); peringatan terakhir selesai → Dalam pemulihan. Peta memperbarui titik lewat setData |

@@ -472,6 +472,9 @@ ol.riwayat-malam.baris li { display: inline-flex; gap: 6px; padding: 6px 10px; b
 }
 @media (max-width: 1199px) { .modal .section-heading { flex-direction: row; align-items: center; } }
 
+/* Alur inti langkah 6: P2 membaca peringatan */
+.catatan-api { margin: -12px 0 16px; }
+
 /* T16: halaman bukti (P9, P10) */
 .batang-daftar { display: grid; gap: 18px; margin-top: 4px; }
 .batang-kepala { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 8px; }

@@ -1,4 +1,5 @@
 import type { Tone } from "@/components/ui";
+import type { Plts } from "@/lib/data";
 
 // Klien API SuryaJaga (FastAPI). Alamat dari NEXT_PUBLIC_API_URL; bawaan untuk pengembangan lokal.
 const DASAR = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -95,3 +96,19 @@ export interface HasilKeluhan {
 export const kirimKeluhan = (teks: string) => minta<HasilKeluhan>("/keluhan", { method: "POST", body: JSON.stringify({ teks }) });
 
 export const ambilPanduan = (kategori: string) => minta<TopikPanduan>(`/panduan/${encodeURIComponent(kategori)}`);
+
+export interface PltsTerpantau extends Plts {
+  peringatan: Peringatan | null;
+}
+
+/**
+ * Status di peta setelah memperhitungkan peringatan (alur inti langkah 6). Peringatan terakhir yang selesai
+ * mengubah PLTS kritis/waspada menjadi "dalam_pemulihan", bukan "normal": perbaikan belum dikonfirmasi data.
+ */
+export function terapkanPeringatan(daftar: Plts[], semua: Peringatan[]): PltsTerpantau[] {
+  return daftar.map(p => {
+    const terakhir = semua.filter(x => x.plts_id === p.id).sort((a, b) => b.dibuat.localeCompare(a.dibuat))[0] ?? null;
+    const pulih = terakhir?.status === "selesai" && (p.status === "kritis" || p.status === "waspada");
+    return { ...p, status: pulih ? "dalam_pemulihan" : p.status, peringatan: terakhir };
+  });
+}

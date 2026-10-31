@@ -65,7 +65,7 @@ export function kalimatAlasan(alasan: string): string {
 }
 
 /** Urut dari yang paling butuh tindakan; laporan terbaru lebih dulu bila statusnya sama. */
-export function urutkanPrioritas(daftar: Plts[]): Plts[] {
+export function urutkanPrioritas<T extends Plts>(daftar: T[]): T[] {
   return [...daftar].sort((a, b) =>
     STATUS[a.status].urutan - STATUS[b.status].urutan
     || (b.tanggal_laporan ?? "").localeCompare(a.tanggal_laporan ?? ""));

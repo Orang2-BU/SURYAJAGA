@@ -64,6 +64,13 @@ function isiPopup(p: Plts): HTMLElement {
   return wadah;
 }
 
+function geojson(daftar: Plts[]): GeoJSON.FeatureCollection {
+  return {
+    type: "FeatureCollection",
+    features: daftar.map(p => ({ type: "Feature", properties: { id: p.id, status: p.status }, geometry: { type: "Point", coordinates: [p.lon, p.lat] } })),
+  };
+}
+
 export function PetaPlts({ daftar }: { daftar: Plts[] }) {
   const wadah = useRef<HTMLDivElement>(null);
   const petaRef = useRef<import("maplibre-gl").Map | undefined>(undefined);
@@ -75,6 +82,15 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
     for (const l of DAFTAR_LAPISAN) petaRef.current?.setLayoutProperty(l, "visibility", l === id ? "visible" : "none");
   }
 
+  // Daftar terbaru untuk popup; titik diperbarui lewat setData, bukan membuat ulang peta (status bisa berubah dari API).
+  const daftarRef = useRef(daftar);
+  useEffect(() => {
+    daftarRef.current = daftar;
+    if (keadaan !== "siap") return;
+    const sumber = petaRef.current?.getSource("plts");
+    if (sumber && "setData" in sumber) (sumber as import("maplibre-gl").GeoJSONSource).setData(geojson(daftar));
+  }, [daftar, keadaan]);
+
   useEffect(() => {
     let peta: import("maplibre-gl").Map | undefined;
     let batal = false;
@@ -82,7 +98,7 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
       if (batal || !wadah.current) return;
       // MapLibre 6 memuat worker dari berkas terpisah; alamat bawaannya tidak cocok dengan chunk bundler.
       setWorkerUrl(new URL("maplibre-gl/dist/maplibre-gl-worker.mjs", import.meta.url).href);
-      const batas = daftar.reduce((b, p) => b.extend([p.lon, p.lat]), new LngLatBounds());
+      const batas = daftarRef.current.reduce((b, p) => b.extend([p.lon, p.lat]), new LngLatBounds());
       peta = new Map({
         container: wadah.current,
         style: GAYA_PETA,
@@ -100,17 +116,7 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
         const gerakHalus = !matchMedia("(prefers-reduced-motion: reduce)").matches;
         // Padding atas lebih besar agar titik tidak tertutup pilihan lapisan.
         peta.fitBounds(batas, { padding: { top: 130, bottom: 40, left: 40, right: 60 }, maxZoom: 9, duration: gerakHalus ? 2400 : 0 });
-        peta.addSource("plts", {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: daftar.map(p => ({
-              type: "Feature",
-              properties: { id: p.id, status: p.status },
-              geometry: { type: "Point", coordinates: [p.lon, p.lat] },
-            })),
-          },
-        });
+        peta.addSource("plts", { type: "geojson", data: geojson(daftarRef.current) });
         peta.addLayer({
           id: "plts-titik",
           type: "circle",
@@ -130,7 +136,7 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
         peta.on("mouseleave", "plts-titik", () => { peta!.getCanvas().style.cursor = ""; });
         peta.on("click", "plts-titik", e => {
           const id = e.features?.[0]?.properties?.id;
-          const p = daftar.find(x => x.id === id);
+          const p = daftarRef.current.find(x => x.id === id);
           if (!p) return;
           new Popup({ offset: 12, closeButton: true }).setLngLat([p.lon, p.lat]).setDOMContent(isiPopup(p)).addTo(peta!);
         });
@@ -138,7 +144,7 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
       });
     }).catch(() => setKeadaan("gagal"));
     return () => { batal = true; peta?.remove(); petaRef.current = undefined; };
-  }, [daftar]);
+  }, []);
 
   return <div className="peta-wadah">
     {keadaan === "siap" && <div className="peta-pilih">

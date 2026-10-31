@@ -102,3 +102,4 @@
 | 31 Okt 2026 | Konfigurasi deploy siap (Render + Vercel); akun dibuat tim |
 | 31 Okt 2026 | Q14: deploy satu Vercel; model keluhan diekspor dari Python, test kesetaraan 60/60 |
 | 31 Okt 2026 | Purwarupa online di suryajaga.vercel.app; alur inti 6/6 diuji di produksi; tautan dan tangkapan online masuk proposal (36 hlm) |
+| 31 Okt 2026 | Semua PLTS punya isi di semua kartu (permintaan user): prediksi baterai dari simulator untuk semua PLTS dengan catatan untuk kasus nyata; laporan malam contoh peragaan berlabel; panel Lakarama dianalisis Sentinel-2 asli pada area hasil penafsiran citra Esri (stabil, -0,05, belum diverifikasi lapangan); panel dan cahaya malam PLTS contoh berupa data contoh berlabel, terpisah dari hasil uji |

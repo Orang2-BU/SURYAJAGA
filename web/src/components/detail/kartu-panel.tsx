@@ -27,6 +27,8 @@ export function KartuPanel({ panel, metode }: { panel: KondisiPanel; metode: Met
       <div><h2 id="panel-judul">Kondisi panel dari foto satelit</h2><p>Indeks vegetasi (NDVI) Sentinel-2 musim kemarau di area panel dibanding sekitarnya.</p></div>
       <Badge tone={s.tone}>{s.label}</Badge>
     </div>
+    {panel.label_data === "contoh" && <p className="catatan-simulasi" role="note">Data contoh untuk PLTS fiktif, bukan hasil citra satelit.</p>}
+    {panel.label_data === "asli" && !panel.osm_way && <p className="catatan-simulasi" role="note">Area panel ditafsirkan dari citra satelit dan belum diverifikasi di lapangan; hasil di bawah adalah pengukuran Sentinel-2 asli di area tersebut.</p>}
     <p className="prediksi-arti">{s.arti(beda)}</p>
     <figure className="grafik">
       <div className="grafik-badan">
@@ -47,8 +49,8 @@ export function KartuPanel({ panel, metode }: { panel: KondisiPanel; metode: Met
     </figure>
     <p className="small muted catatan-bukti">
       Panel surya punya NDVI rendah, vegetasi tinggi. Foto siang hanya melihat kondisi fisik panel, bukan apakah listriknya menyala.
-      Data {metode.produk}, poligon {metode.poligon}.{" "}
-      <a className="chip-sumber" href={`https://www.openstreetmap.org/way/${panel.osm_way}`} target="_blank" rel="noreferrer"><Satellite size={12} strokeWidth={1.75} aria-hidden />OSM {panel.osm_way}<ArrowUpRight size={12} strokeWidth={1.75} aria-hidden /></a>
+      {panel.label_data === "contoh" ? "Deret contoh untuk peragaan." : <>Data {metode.produk}, poligon {panel.sumber_poligon}.</>}{" "}
+      {panel.osm_way && <a className="chip-sumber" href={`https://www.openstreetmap.org/way/${panel.osm_way}`} target="_blank" rel="noreferrer"><Satellite size={12} strokeWidth={1.75} aria-hidden />OSM {panel.osm_way}<ArrowUpRight size={12} strokeWidth={1.75} aria-hidden /></a>}
     </p>
   </section>;
 }

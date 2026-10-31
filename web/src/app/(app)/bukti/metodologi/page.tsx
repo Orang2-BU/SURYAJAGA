@@ -35,6 +35,8 @@ const BATASAN = [
   "Model baterai dilatih dari data simulasi; di sel nyata urutan risikonya tepat, tetapi peluangnya lebih rendah sehingga ambang perlu kalibrasi.",
   "Kalimat latih dan uji klasifikasi keluhan disusun tim, bukan pesan operator asli; akurasinya batas atas.",
   "Status listrik eksisting tiap desa calon lokasi belum tercakup karena data jaringan di OpenStreetMap sangat sedikit.",
+  "Belum ada PLTS dengan data BMS lapangan; prediksi baterai di semua PLTS memakai lintasan simulasi yang dipilih sesuai kondisi laporan.",
+  "Laporan malam yang tampil saat pertama dibuka adalah contoh peragaan; jawaban operator di browser ini menggantikannya.",
   "Isi percakapan operator belum disimpan di server; yang tercatat adalah perubahan status peringatan.",
 ];
 

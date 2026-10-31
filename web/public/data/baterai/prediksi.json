@@ -1,182 +1,16 @@
 [
   {
     "plts_id": "parang",
-    "tersedia": false,
-    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
-  },
-  {
-    "plts_id": "lakarama",
-    "tersedia": false,
-    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
-  },
-  {
-    "plts_id": "burung-loe",
-    "tersedia": false,
-    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
-  },
-  {
-    "plts_id": "sembur",
     "tersedia": true,
     "label_data": "simulasi",
-    "p_gagal_26_minggu": 0.002,
-    "minggu_tersisa": 103.4,
+    "p_gagal_26_minggu": 0.905,
+    "minggu_tersisa": 10.3,
     "fitur": {
-      "soh_bms": 0.9596,
-      "tren_soh": -0.0012,
-      "proyeksi_minggu": 135.2167
+      "soh_bms": 0.8022,
+      "tren_soh": -0.0004,
+      "proyeksi_minggu": 5.8968
     },
     "riwayat_soh": [
-      {
-        "hari": 6,
-        "soh_bms": 0.9721
-      },
-      {
-        "hari": 13,
-        "soh_bms": 0.9687
-      },
-      {
-        "hari": 20,
-        "soh_bms": 0.9711
-      },
-      {
-        "hari": 27,
-        "soh_bms": 0.9794
-      },
-      {
-        "hari": 34,
-        "soh_bms": 0.976
-      },
-      {
-        "hari": 41,
-        "soh_bms": 0.9684
-      },
-      {
-        "hari": 48,
-        "soh_bms": 0.9766
-      },
-      {
-        "hari": 55,
-        "soh_bms": 0.9746
-      },
-      {
-        "hari": 62,
-        "soh_bms": 0.972
-      },
-      {
-        "hari": 69,
-        "soh_bms": 0.9519
-      },
-      {
-        "hari": 76,
-        "soh_bms": 0.9666
-      },
-      {
-        "hari": 83,
-        "soh_bms": 0.9759
-      },
-      {
-        "hari": 90,
-        "soh_bms": 0.9551
-      },
-      {
-        "hari": 97,
-        "soh_bms": 0.9704
-      },
-      {
-        "hari": 104,
-        "soh_bms": 0.9619
-      },
-      {
-        "hari": 111,
-        "soh_bms": 0.9551
-      },
-      {
-        "hari": 118,
-        "soh_bms": 0.9618
-      },
-      {
-        "hari": 125,
-        "soh_bms": 0.9458
-      },
-      {
-        "hari": 132,
-        "soh_bms": 0.9656
-      },
-      {
-        "hari": 139,
-        "soh_bms": 0.9707
-      },
-      {
-        "hari": 146,
-        "soh_bms": 0.9404
-      },
-      {
-        "hari": 153,
-        "soh_bms": 0.9496
-      },
-      {
-        "hari": 160,
-        "soh_bms": 0.9615
-      },
-      {
-        "hari": 167,
-        "soh_bms": 0.9605
-      },
-      {
-        "hari": 174,
-        "soh_bms": 0.9376
-      },
-      {
-        "hari": 181,
-        "soh_bms": 0.9342
-      },
-      {
-        "hari": 188,
-        "soh_bms": 0.9477
-      },
-      {
-        "hari": 195,
-        "soh_bms": 0.9409
-      },
-      {
-        "hari": 202,
-        "soh_bms": 0.9497
-      }
-    ]
-  },
-  {
-    "plts_id": "batu-bingkung",
-    "tersedia": false,
-    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
-  },
-  {
-    "plts_id": "karimunjawa-contoh",
-    "tersedia": true,
-    "label_data": "simulasi",
-    "p_gagal_26_minggu": 0.718,
-    "minggu_tersisa": 19.1,
-    "fitur": {
-      "soh_bms": 0.8046,
-      "tren_soh": -0.0003,
-      "proyeksi_minggu": 13.7535
-    },
-    "riwayat_soh": [
-      {
-        "hari": 2141,
-        "soh_bms": 0.8302
-      },
-      {
-        "hari": 2148,
-        "soh_bms": 0.8233
-      },
-      {
-        "hari": 2155,
-        "soh_bms": 0.837
-      },
-      {
-        "hari": 2162,
-        "soh_bms": 0.8345
-      },
       {
         "hari": 2169,
         "soh_bms": 0.8363
@@ -576,6 +410,1877 @@
       {
         "hari": 2862,
         "soh_bms": 0.7964
+      },
+      {
+        "hari": 2869,
+        "soh_bms": 0.8087
+      },
+      {
+        "hari": 2876,
+        "soh_bms": 0.8077
+      },
+      {
+        "hari": 2883,
+        "soh_bms": 0.768
+      },
+      {
+        "hari": 2890,
+        "soh_bms": 0.8127
+      }
+    ],
+    "catatan": "PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini."
+  },
+  {
+    "plts_id": "lakarama",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.907,
+    "minggu_tersisa": 12.9,
+    "fitur": {
+      "soh_bms": 0.8028,
+      "tren_soh": -0.0003,
+      "proyeksi_minggu": 8.2572
+    },
+    "riwayat_soh": [
+      {
+        "hari": 4416,
+        "soh_bms": 0.8124
+      },
+      {
+        "hari": 4423,
+        "soh_bms": 0.8197
+      },
+      {
+        "hari": 4430,
+        "soh_bms": 0.8397
+      },
+      {
+        "hari": 4437,
+        "soh_bms": 0.804
+      },
+      {
+        "hari": 4444,
+        "soh_bms": 0.787
+      },
+      {
+        "hari": 4451,
+        "soh_bms": 0.8244
+      },
+      {
+        "hari": 4458,
+        "soh_bms": 0.8192
+      },
+      {
+        "hari": 4465,
+        "soh_bms": 0.8124
+      },
+      {
+        "hari": 4472,
+        "soh_bms": 0.8073
+      },
+      {
+        "hari": 4479,
+        "soh_bms": 0.8041
+      },
+      {
+        "hari": 4486,
+        "soh_bms": 0.8109
+      },
+      {
+        "hari": 4493,
+        "soh_bms": 0.8255
+      },
+      {
+        "hari": 4500,
+        "soh_bms": 0.8218
+      },
+      {
+        "hari": 4507,
+        "soh_bms": 0.8161
+      },
+      {
+        "hari": 4514,
+        "soh_bms": 0.8009
+      },
+      {
+        "hari": 4521,
+        "soh_bms": 0.8049
+      },
+      {
+        "hari": 4528,
+        "soh_bms": 0.806
+      },
+      {
+        "hari": 4535,
+        "soh_bms": 0.811
+      },
+      {
+        "hari": 4542,
+        "soh_bms": 0.8284
+      },
+      {
+        "hari": 4549,
+        "soh_bms": 0.8031
+      },
+      {
+        "hari": 4556,
+        "soh_bms": 0.8142
+      },
+      {
+        "hari": 4563,
+        "soh_bms": 0.8127
+      },
+      {
+        "hari": 4570,
+        "soh_bms": 0.8157
+      },
+      {
+        "hari": 4577,
+        "soh_bms": 0.8183
+      },
+      {
+        "hari": 4584,
+        "soh_bms": 0.8066
+      },
+      {
+        "hari": 4591,
+        "soh_bms": 0.8073
+      },
+      {
+        "hari": 4598,
+        "soh_bms": 0.8128
+      },
+      {
+        "hari": 4605,
+        "soh_bms": 0.8089
+      },
+      {
+        "hari": 4612,
+        "soh_bms": 0.8186
+      },
+      {
+        "hari": 4619,
+        "soh_bms": 0.8207
+      },
+      {
+        "hari": 4626,
+        "soh_bms": 0.8015
+      },
+      {
+        "hari": 4633,
+        "soh_bms": 0.8082
+      },
+      {
+        "hari": 4640,
+        "soh_bms": 0.8134
+      },
+      {
+        "hari": 4647,
+        "soh_bms": 0.8085
+      },
+      {
+        "hari": 4654,
+        "soh_bms": 0.8167
+      },
+      {
+        "hari": 4661,
+        "soh_bms": 0.8023
+      },
+      {
+        "hari": 4668,
+        "soh_bms": 0.8014
+      },
+      {
+        "hari": 4675,
+        "soh_bms": 0.8076
+      },
+      {
+        "hari": 4682,
+        "soh_bms": 0.8002
+      },
+      {
+        "hari": 4689,
+        "soh_bms": 0.8234
+      },
+      {
+        "hari": 4696,
+        "soh_bms": 0.8013
+      },
+      {
+        "hari": 4703,
+        "soh_bms": 0.8028
+      },
+      {
+        "hari": 4710,
+        "soh_bms": 0.8151
+      },
+      {
+        "hari": 4717,
+        "soh_bms": 0.8115
+      },
+      {
+        "hari": 4724,
+        "soh_bms": 0.8146
+      },
+      {
+        "hari": 4731,
+        "soh_bms": 0.8183
+      },
+      {
+        "hari": 4738,
+        "soh_bms": 0.8037
+      },
+      {
+        "hari": 4745,
+        "soh_bms": 0.8111
+      },
+      {
+        "hari": 4752,
+        "soh_bms": 0.7913
+      },
+      {
+        "hari": 4759,
+        "soh_bms": 0.8078
+      },
+      {
+        "hari": 4766,
+        "soh_bms": 0.8373
+      },
+      {
+        "hari": 4773,
+        "soh_bms": 0.8073
+      },
+      {
+        "hari": 4780,
+        "soh_bms": 0.8065
+      },
+      {
+        "hari": 4787,
+        "soh_bms": 0.8111
+      },
+      {
+        "hari": 4794,
+        "soh_bms": 0.8045
+      },
+      {
+        "hari": 4801,
+        "soh_bms": 0.8211
+      },
+      {
+        "hari": 4808,
+        "soh_bms": 0.7983
+      },
+      {
+        "hari": 4815,
+        "soh_bms": 0.8085
+      },
+      {
+        "hari": 4822,
+        "soh_bms": 0.8268
+      },
+      {
+        "hari": 4829,
+        "soh_bms": 0.8348
+      },
+      {
+        "hari": 4836,
+        "soh_bms": 0.8107
+      },
+      {
+        "hari": 4843,
+        "soh_bms": 0.8024
+      },
+      {
+        "hari": 4850,
+        "soh_bms": 0.8114
+      },
+      {
+        "hari": 4857,
+        "soh_bms": 0.824
+      },
+      {
+        "hari": 4864,
+        "soh_bms": 0.7969
+      },
+      {
+        "hari": 4871,
+        "soh_bms": 0.8204
+      },
+      {
+        "hari": 4878,
+        "soh_bms": 0.8062
+      },
+      {
+        "hari": 4885,
+        "soh_bms": 0.8246
+      },
+      {
+        "hari": 4892,
+        "soh_bms": 0.8034
+      },
+      {
+        "hari": 4899,
+        "soh_bms": 0.8126
+      },
+      {
+        "hari": 4906,
+        "soh_bms": 0.7975
+      },
+      {
+        "hari": 4913,
+        "soh_bms": 0.8175
+      },
+      {
+        "hari": 4920,
+        "soh_bms": 0.8057
+      },
+      {
+        "hari": 4927,
+        "soh_bms": 0.8189
+      },
+      {
+        "hari": 4934,
+        "soh_bms": 0.8075
+      },
+      {
+        "hari": 4941,
+        "soh_bms": 0.8011
+      },
+      {
+        "hari": 4948,
+        "soh_bms": 0.8135
+      },
+      {
+        "hari": 4955,
+        "soh_bms": 0.8049
+      },
+      {
+        "hari": 4962,
+        "soh_bms": 0.8181
+      },
+      {
+        "hari": 4969,
+        "soh_bms": 0.7968
+      },
+      {
+        "hari": 4976,
+        "soh_bms": 0.8012
+      },
+      {
+        "hari": 4983,
+        "soh_bms": 0.8142
+      },
+      {
+        "hari": 4990,
+        "soh_bms": 0.7982
+      },
+      {
+        "hari": 4997,
+        "soh_bms": 0.8066
+      },
+      {
+        "hari": 5004,
+        "soh_bms": 0.821
+      },
+      {
+        "hari": 5011,
+        "soh_bms": 0.8074
+      },
+      {
+        "hari": 5018,
+        "soh_bms": 0.8103
+      },
+      {
+        "hari": 5025,
+        "soh_bms": 0.8147
+      },
+      {
+        "hari": 5032,
+        "soh_bms": 0.8182
+      },
+      {
+        "hari": 5039,
+        "soh_bms": 0.8085
+      },
+      {
+        "hari": 5046,
+        "soh_bms": 0.8002
+      },
+      {
+        "hari": 5053,
+        "soh_bms": 0.7764
+      },
+      {
+        "hari": 5060,
+        "soh_bms": 0.7914
+      },
+      {
+        "hari": 5067,
+        "soh_bms": 0.7968
+      },
+      {
+        "hari": 5074,
+        "soh_bms": 0.8101
+      },
+      {
+        "hari": 5081,
+        "soh_bms": 0.7934
+      },
+      {
+        "hari": 5088,
+        "soh_bms": 0.8022
+      },
+      {
+        "hari": 5095,
+        "soh_bms": 0.7897
+      },
+      {
+        "hari": 5102,
+        "soh_bms": 0.7885
+      },
+      {
+        "hari": 5109,
+        "soh_bms": 0.8101
+      },
+      {
+        "hari": 5116,
+        "soh_bms": 0.8011
+      },
+      {
+        "hari": 5123,
+        "soh_bms": 0.805
+      },
+      {
+        "hari": 5130,
+        "soh_bms": 0.7935
+      },
+      {
+        "hari": 5137,
+        "soh_bms": 0.798
+      }
+    ],
+    "catatan": "PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini."
+  },
+  {
+    "plts_id": "burung-loe",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.92,
+    "minggu_tersisa": 10.4,
+    "fitur": {
+      "soh_bms": 0.8017,
+      "tren_soh": -0.0002,
+      "proyeksi_minggu": 8.153
+    },
+    "riwayat_soh": [
+      {
+        "hari": 4262,
+        "soh_bms": 0.8246
+      },
+      {
+        "hari": 4269,
+        "soh_bms": 0.8272
+      },
+      {
+        "hari": 4276,
+        "soh_bms": 0.7982
+      },
+      {
+        "hari": 4283,
+        "soh_bms": 0.8186
+      },
+      {
+        "hari": 4290,
+        "soh_bms": 0.8114
+      },
+      {
+        "hari": 4297,
+        "soh_bms": 0.8282
+      },
+      {
+        "hari": 4304,
+        "soh_bms": 0.8156
+      },
+      {
+        "hari": 4311,
+        "soh_bms": 0.8301
+      },
+      {
+        "hari": 4318,
+        "soh_bms": 0.8181
+      },
+      {
+        "hari": 4325,
+        "soh_bms": 0.8167
+      },
+      {
+        "hari": 4332,
+        "soh_bms": 0.8194
+      },
+      {
+        "hari": 4339,
+        "soh_bms": 0.8144
+      },
+      {
+        "hari": 4346,
+        "soh_bms": 0.8011
+      },
+      {
+        "hari": 4353,
+        "soh_bms": 0.8315
+      },
+      {
+        "hari": 4360,
+        "soh_bms": 0.7996
+      },
+      {
+        "hari": 4367,
+        "soh_bms": 0.8183
+      },
+      {
+        "hari": 4374,
+        "soh_bms": 0.8044
+      },
+      {
+        "hari": 4381,
+        "soh_bms": 0.8056
+      },
+      {
+        "hari": 4388,
+        "soh_bms": 0.8124
+      },
+      {
+        "hari": 4395,
+        "soh_bms": 0.8087
+      },
+      {
+        "hari": 4402,
+        "soh_bms": 0.7955
+      },
+      {
+        "hari": 4409,
+        "soh_bms": 0.8169
+      },
+      {
+        "hari": 4416,
+        "soh_bms": 0.8118
+      },
+      {
+        "hari": 4423,
+        "soh_bms": 0.8085
+      },
+      {
+        "hari": 4430,
+        "soh_bms": 0.8092
+      },
+      {
+        "hari": 4437,
+        "soh_bms": 0.8241
+      },
+      {
+        "hari": 4444,
+        "soh_bms": 0.817
+      },
+      {
+        "hari": 4451,
+        "soh_bms": 0.8184
+      },
+      {
+        "hari": 4458,
+        "soh_bms": 0.8223
+      },
+      {
+        "hari": 4465,
+        "soh_bms": 0.8186
+      },
+      {
+        "hari": 4472,
+        "soh_bms": 0.822
+      },
+      {
+        "hari": 4479,
+        "soh_bms": 0.7911
+      },
+      {
+        "hari": 4486,
+        "soh_bms": 0.7998
+      },
+      {
+        "hari": 4493,
+        "soh_bms": 0.8011
+      },
+      {
+        "hari": 4500,
+        "soh_bms": 0.8025
+      },
+      {
+        "hari": 4507,
+        "soh_bms": 0.82
+      },
+      {
+        "hari": 4514,
+        "soh_bms": 0.8102
+      },
+      {
+        "hari": 4521,
+        "soh_bms": 0.8085
+      },
+      {
+        "hari": 4528,
+        "soh_bms": 0.8095
+      },
+      {
+        "hari": 4535,
+        "soh_bms": 0.7935
+      },
+      {
+        "hari": 4542,
+        "soh_bms": 0.7983
+      },
+      {
+        "hari": 4549,
+        "soh_bms": 0.8042
+      },
+      {
+        "hari": 4556,
+        "soh_bms": 0.8215
+      },
+      {
+        "hari": 4563,
+        "soh_bms": 0.8137
+      },
+      {
+        "hari": 4570,
+        "soh_bms": 0.8179
+      },
+      {
+        "hari": 4577,
+        "soh_bms": 0.8239
+      },
+      {
+        "hari": 4584,
+        "soh_bms": 0.8043
+      },
+      {
+        "hari": 4591,
+        "soh_bms": 0.8148
+      },
+      {
+        "hari": 4598,
+        "soh_bms": 0.7908
+      },
+      {
+        "hari": 4605,
+        "soh_bms": 0.8251
+      },
+      {
+        "hari": 4612,
+        "soh_bms": 0.8125
+      },
+      {
+        "hari": 4619,
+        "soh_bms": 0.8381
+      },
+      {
+        "hari": 4626,
+        "soh_bms": 0.8058
+      },
+      {
+        "hari": 4633,
+        "soh_bms": 0.8151
+      },
+      {
+        "hari": 4640,
+        "soh_bms": 0.8093
+      },
+      {
+        "hari": 4647,
+        "soh_bms": 0.8086
+      },
+      {
+        "hari": 4654,
+        "soh_bms": 0.8055
+      },
+      {
+        "hari": 4661,
+        "soh_bms": 0.8016
+      },
+      {
+        "hari": 4668,
+        "soh_bms": 0.7997
+      },
+      {
+        "hari": 4675,
+        "soh_bms": 0.8152
+      },
+      {
+        "hari": 4682,
+        "soh_bms": 0.8065
+      },
+      {
+        "hari": 4689,
+        "soh_bms": 0.7985
+      },
+      {
+        "hari": 4696,
+        "soh_bms": 0.8182
+      },
+      {
+        "hari": 4703,
+        "soh_bms": 0.808
+      },
+      {
+        "hari": 4710,
+        "soh_bms": 0.8034
+      },
+      {
+        "hari": 4717,
+        "soh_bms": 0.8044
+      },
+      {
+        "hari": 4724,
+        "soh_bms": 0.8238
+      },
+      {
+        "hari": 4731,
+        "soh_bms": 0.8088
+      },
+      {
+        "hari": 4738,
+        "soh_bms": 0.8012
+      },
+      {
+        "hari": 4745,
+        "soh_bms": 0.8269
+      },
+      {
+        "hari": 4752,
+        "soh_bms": 0.8113
+      },
+      {
+        "hari": 4759,
+        "soh_bms": 0.7976
+      },
+      {
+        "hari": 4766,
+        "soh_bms": 0.8183
+      },
+      {
+        "hari": 4773,
+        "soh_bms": 0.824
+      },
+      {
+        "hari": 4780,
+        "soh_bms": 0.7859
+      },
+      {
+        "hari": 4787,
+        "soh_bms": 0.8139
+      },
+      {
+        "hari": 4794,
+        "soh_bms": 0.8229
+      },
+      {
+        "hari": 4801,
+        "soh_bms": 0.7969
+      },
+      {
+        "hari": 4808,
+        "soh_bms": 0.8093
+      },
+      {
+        "hari": 4815,
+        "soh_bms": 0.8013
+      },
+      {
+        "hari": 4822,
+        "soh_bms": 0.7996
+      },
+      {
+        "hari": 4829,
+        "soh_bms": 0.8137
+      },
+      {
+        "hari": 4836,
+        "soh_bms": 0.8059
+      },
+      {
+        "hari": 4843,
+        "soh_bms": 0.8013
+      },
+      {
+        "hari": 4850,
+        "soh_bms": 0.8062
+      },
+      {
+        "hari": 4857,
+        "soh_bms": 0.7768
+      },
+      {
+        "hari": 4864,
+        "soh_bms": 0.8051
+      },
+      {
+        "hari": 4871,
+        "soh_bms": 0.803
+      },
+      {
+        "hari": 4878,
+        "soh_bms": 0.79
+      },
+      {
+        "hari": 4885,
+        "soh_bms": 0.8106
+      },
+      {
+        "hari": 4892,
+        "soh_bms": 0.8059
+      },
+      {
+        "hari": 4899,
+        "soh_bms": 0.8028
+      },
+      {
+        "hari": 4906,
+        "soh_bms": 0.7953
+      },
+      {
+        "hari": 4913,
+        "soh_bms": 0.8084
+      },
+      {
+        "hari": 4920,
+        "soh_bms": 0.8225
+      },
+      {
+        "hari": 4927,
+        "soh_bms": 0.8084
+      },
+      {
+        "hari": 4934,
+        "soh_bms": 0.7842
+      },
+      {
+        "hari": 4941,
+        "soh_bms": 0.8187
+      },
+      {
+        "hari": 4948,
+        "soh_bms": 0.7682
+      },
+      {
+        "hari": 4955,
+        "soh_bms": 0.8136
+      },
+      {
+        "hari": 4962,
+        "soh_bms": 0.788
+      },
+      {
+        "hari": 4969,
+        "soh_bms": 0.8072
+      },
+      {
+        "hari": 4976,
+        "soh_bms": 0.8055
+      },
+      {
+        "hari": 4983,
+        "soh_bms": 0.7942
+      }
+    ],
+    "catatan": "PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini."
+  },
+  {
+    "plts_id": "sembur",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.002,
+    "minggu_tersisa": 103.6,
+    "fitur": {
+      "soh_bms": 0.9609,
+      "tren_soh": -0.0017,
+      "proyeksi_minggu": 95.7241
+    },
+    "riwayat_soh": [
+      {
+        "hari": 6,
+        "soh_bms": 0.9904
+      },
+      {
+        "hari": 13,
+        "soh_bms": 1.0056
+      },
+      {
+        "hari": 20,
+        "soh_bms": 0.9882
+      },
+      {
+        "hari": 27,
+        "soh_bms": 0.9931
+      },
+      {
+        "hari": 34,
+        "soh_bms": 0.9798
+      },
+      {
+        "hari": 41,
+        "soh_bms": 0.9812
+      },
+      {
+        "hari": 48,
+        "soh_bms": 0.9596
+      },
+      {
+        "hari": 55,
+        "soh_bms": 0.9688
+      },
+      {
+        "hari": 62,
+        "soh_bms": 0.9677
+      },
+      {
+        "hari": 69,
+        "soh_bms": 0.985
+      },
+      {
+        "hari": 76,
+        "soh_bms": 0.9617
+      },
+      {
+        "hari": 83,
+        "soh_bms": 0.969
+      },
+      {
+        "hari": 90,
+        "soh_bms": 0.97
+      },
+      {
+        "hari": 97,
+        "soh_bms": 0.9508
+      },
+      {
+        "hari": 104,
+        "soh_bms": 0.9815
+      },
+      {
+        "hari": 111,
+        "soh_bms": 0.9671
+      },
+      {
+        "hari": 118,
+        "soh_bms": 0.9568
+      },
+      {
+        "hari": 125,
+        "soh_bms": 0.9449
+      },
+      {
+        "hari": 132,
+        "soh_bms": 0.9369
+      },
+      {
+        "hari": 139,
+        "soh_bms": 0.9517
+      },
+      {
+        "hari": 146,
+        "soh_bms": 0.9433
+      },
+      {
+        "hari": 153,
+        "soh_bms": 0.9645
+      },
+      {
+        "hari": 160,
+        "soh_bms": 0.96
+      },
+      {
+        "hari": 167,
+        "soh_bms": 0.9499
+      },
+      {
+        "hari": 174,
+        "soh_bms": 0.9434
+      },
+      {
+        "hari": 181,
+        "soh_bms": 0.9444
+      },
+      {
+        "hari": 188,
+        "soh_bms": 0.9475
+      },
+      {
+        "hari": 195,
+        "soh_bms": 0.9539
+      },
+      {
+        "hari": 202,
+        "soh_bms": 0.9512
+      }
+    ],
+    "catatan": "PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini."
+  },
+  {
+    "plts_id": "batu-bingkung",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.001,
+    "minggu_tersisa": 103.0,
+    "fitur": {
+      "soh_bms": 0.9134,
+      "tren_soh": -0.0003,
+      "proyeksi_minggu": 342.3693
+    },
+    "riwayat_soh": [
+      {
+        "hari": 377,
+        "soh_bms": 0.9456
+      },
+      {
+        "hari": 384,
+        "soh_bms": 0.9312
+      },
+      {
+        "hari": 391,
+        "soh_bms": 0.9537
+      },
+      {
+        "hari": 398,
+        "soh_bms": 0.9371
+      },
+      {
+        "hari": 405,
+        "soh_bms": 0.9432
+      },
+      {
+        "hari": 412,
+        "soh_bms": 0.9397
+      },
+      {
+        "hari": 419,
+        "soh_bms": 0.9248
+      },
+      {
+        "hari": 426,
+        "soh_bms": 0.9363
+      },
+      {
+        "hari": 433,
+        "soh_bms": 0.9229
+      },
+      {
+        "hari": 440,
+        "soh_bms": 0.9541
+      },
+      {
+        "hari": 447,
+        "soh_bms": 0.9326
+      },
+      {
+        "hari": 454,
+        "soh_bms": 0.9411
+      },
+      {
+        "hari": 461,
+        "soh_bms": 0.9261
+      },
+      {
+        "hari": 468,
+        "soh_bms": 0.9386
+      },
+      {
+        "hari": 475,
+        "soh_bms": 0.9393
+      },
+      {
+        "hari": 482,
+        "soh_bms": 0.9364
+      },
+      {
+        "hari": 489,
+        "soh_bms": 0.9414
+      },
+      {
+        "hari": 496,
+        "soh_bms": 0.9367
+      },
+      {
+        "hari": 503,
+        "soh_bms": 0.9537
+      },
+      {
+        "hari": 510,
+        "soh_bms": 0.9381
+      },
+      {
+        "hari": 517,
+        "soh_bms": 0.9269
+      },
+      {
+        "hari": 524,
+        "soh_bms": 0.9267
+      },
+      {
+        "hari": 531,
+        "soh_bms": 0.928
+      },
+      {
+        "hari": 538,
+        "soh_bms": 0.9318
+      },
+      {
+        "hari": 545,
+        "soh_bms": 0.9386
+      },
+      {
+        "hari": 552,
+        "soh_bms": 0.9387
+      },
+      {
+        "hari": 559,
+        "soh_bms": 0.9408
+      },
+      {
+        "hari": 566,
+        "soh_bms": 0.9311
+      },
+      {
+        "hari": 573,
+        "soh_bms": 0.9237
+      },
+      {
+        "hari": 580,
+        "soh_bms": 0.9215
+      },
+      {
+        "hari": 587,
+        "soh_bms": 0.9283
+      },
+      {
+        "hari": 594,
+        "soh_bms": 0.9285
+      },
+      {
+        "hari": 601,
+        "soh_bms": 0.9394
+      },
+      {
+        "hari": 608,
+        "soh_bms": 0.9214
+      },
+      {
+        "hari": 615,
+        "soh_bms": 0.9246
+      },
+      {
+        "hari": 622,
+        "soh_bms": 0.9395
+      },
+      {
+        "hari": 629,
+        "soh_bms": 0.9317
+      },
+      {
+        "hari": 636,
+        "soh_bms": 0.9262
+      },
+      {
+        "hari": 643,
+        "soh_bms": 0.9347
+      },
+      {
+        "hari": 650,
+        "soh_bms": 0.9396
+      },
+      {
+        "hari": 657,
+        "soh_bms": 0.9442
+      },
+      {
+        "hari": 664,
+        "soh_bms": 0.938
+      },
+      {
+        "hari": 671,
+        "soh_bms": 0.9288
+      },
+      {
+        "hari": 678,
+        "soh_bms": 0.9373
+      },
+      {
+        "hari": 685,
+        "soh_bms": 0.9267
+      },
+      {
+        "hari": 692,
+        "soh_bms": 0.939
+      },
+      {
+        "hari": 699,
+        "soh_bms": 0.9143
+      },
+      {
+        "hari": 706,
+        "soh_bms": 0.9301
+      },
+      {
+        "hari": 713,
+        "soh_bms": 0.9368
+      },
+      {
+        "hari": 720,
+        "soh_bms": 0.9239
+      },
+      {
+        "hari": 727,
+        "soh_bms": 0.9147
+      },
+      {
+        "hari": 734,
+        "soh_bms": 0.9177
+      },
+      {
+        "hari": 741,
+        "soh_bms": 0.9559
+      },
+      {
+        "hari": 748,
+        "soh_bms": 0.9337
+      },
+      {
+        "hari": 755,
+        "soh_bms": 0.9276
+      },
+      {
+        "hari": 762,
+        "soh_bms": 0.9324
+      },
+      {
+        "hari": 769,
+        "soh_bms": 0.9153
+      },
+      {
+        "hari": 776,
+        "soh_bms": 0.9206
+      },
+      {
+        "hari": 783,
+        "soh_bms": 0.9306
+      },
+      {
+        "hari": 790,
+        "soh_bms": 0.8983
+      },
+      {
+        "hari": 797,
+        "soh_bms": 0.9323
+      },
+      {
+        "hari": 804,
+        "soh_bms": 0.916
+      },
+      {
+        "hari": 811,
+        "soh_bms": 0.9228
+      },
+      {
+        "hari": 818,
+        "soh_bms": 0.9029
+      },
+      {
+        "hari": 825,
+        "soh_bms": 0.9191
+      },
+      {
+        "hari": 832,
+        "soh_bms": 0.9184
+      },
+      {
+        "hari": 839,
+        "soh_bms": 0.9301
+      },
+      {
+        "hari": 846,
+        "soh_bms": 0.9258
+      },
+      {
+        "hari": 853,
+        "soh_bms": 0.9154
+      },
+      {
+        "hari": 860,
+        "soh_bms": 0.9158
+      },
+      {
+        "hari": 867,
+        "soh_bms": 0.9143
+      },
+      {
+        "hari": 874,
+        "soh_bms": 0.9073
+      },
+      {
+        "hari": 881,
+        "soh_bms": 0.8972
+      },
+      {
+        "hari": 888,
+        "soh_bms": 0.9144
+      },
+      {
+        "hari": 895,
+        "soh_bms": 0.9338
+      },
+      {
+        "hari": 902,
+        "soh_bms": 0.9016
+      },
+      {
+        "hari": 909,
+        "soh_bms": 0.9057
+      },
+      {
+        "hari": 916,
+        "soh_bms": 0.9043
+      },
+      {
+        "hari": 923,
+        "soh_bms": 0.9278
+      },
+      {
+        "hari": 930,
+        "soh_bms": 0.9063
+      },
+      {
+        "hari": 937,
+        "soh_bms": 0.9211
+      },
+      {
+        "hari": 944,
+        "soh_bms": 0.926
+      },
+      {
+        "hari": 951,
+        "soh_bms": 0.9088
+      },
+      {
+        "hari": 958,
+        "soh_bms": 0.9203
+      },
+      {
+        "hari": 965,
+        "soh_bms": 0.9197
+      },
+      {
+        "hari": 972,
+        "soh_bms": 0.9063
+      },
+      {
+        "hari": 979,
+        "soh_bms": 0.9067
+      },
+      {
+        "hari": 986,
+        "soh_bms": 0.9173
+      },
+      {
+        "hari": 993,
+        "soh_bms": 0.9122
+      },
+      {
+        "hari": 1000,
+        "soh_bms": 0.9154
+      },
+      {
+        "hari": 1007,
+        "soh_bms": 0.92
+      },
+      {
+        "hari": 1014,
+        "soh_bms": 0.9201
+      },
+      {
+        "hari": 1021,
+        "soh_bms": 0.902
+      },
+      {
+        "hari": 1028,
+        "soh_bms": 0.8986
+      },
+      {
+        "hari": 1035,
+        "soh_bms": 0.9159
+      },
+      {
+        "hari": 1042,
+        "soh_bms": 0.9143
+      },
+      {
+        "hari": 1049,
+        "soh_bms": 0.9156
+      },
+      {
+        "hari": 1056,
+        "soh_bms": 0.9076
+      },
+      {
+        "hari": 1063,
+        "soh_bms": 0.9118
+      },
+      {
+        "hari": 1070,
+        "soh_bms": 0.9071
+      },
+      {
+        "hari": 1077,
+        "soh_bms": 0.9257
+      },
+      {
+        "hari": 1084,
+        "soh_bms": 0.9021
+      },
+      {
+        "hari": 1091,
+        "soh_bms": 0.9078
+      },
+      {
+        "hari": 1098,
+        "soh_bms": 0.9118
+      }
+    ],
+    "catatan": "PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini."
+  },
+  {
+    "plts_id": "karimunjawa-contoh",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.732,
+    "minggu_tersisa": 19.1,
+    "fitur": {
+      "soh_bms": 0.8046,
+      "tren_soh": -0.0003,
+      "proyeksi_minggu": 13.9985
+    },
+    "riwayat_soh": [
+      {
+        "hari": 3261,
+        "soh_bms": 0.8175
+      },
+      {
+        "hari": 3268,
+        "soh_bms": 0.8048
+      },
+      {
+        "hari": 3275,
+        "soh_bms": 0.8091
+      },
+      {
+        "hari": 3282,
+        "soh_bms": 0.8366
+      },
+      {
+        "hari": 3289,
+        "soh_bms": 0.8155
+      },
+      {
+        "hari": 3296,
+        "soh_bms": 0.8294
+      },
+      {
+        "hari": 3303,
+        "soh_bms": 0.828
+      },
+      {
+        "hari": 3310,
+        "soh_bms": 0.8217
+      },
+      {
+        "hari": 3317,
+        "soh_bms": 0.8365
+      },
+      {
+        "hari": 3324,
+        "soh_bms": 0.8332
+      },
+      {
+        "hari": 3331,
+        "soh_bms": 0.8087
+      },
+      {
+        "hari": 3338,
+        "soh_bms": 0.8108
+      },
+      {
+        "hari": 3345,
+        "soh_bms": 0.8266
+      },
+      {
+        "hari": 3352,
+        "soh_bms": 0.8045
+      },
+      {
+        "hari": 3359,
+        "soh_bms": 0.8167
+      },
+      {
+        "hari": 3366,
+        "soh_bms": 0.8072
+      },
+      {
+        "hari": 3373,
+        "soh_bms": 0.8185
+      },
+      {
+        "hari": 3380,
+        "soh_bms": 0.8188
+      },
+      {
+        "hari": 3387,
+        "soh_bms": 0.8249
+      },
+      {
+        "hari": 3394,
+        "soh_bms": 0.8102
+      },
+      {
+        "hari": 3401,
+        "soh_bms": 0.8082
+      },
+      {
+        "hari": 3408,
+        "soh_bms": 0.8435
+      },
+      {
+        "hari": 3415,
+        "soh_bms": 0.8112
+      },
+      {
+        "hari": 3422,
+        "soh_bms": 0.8279
+      },
+      {
+        "hari": 3429,
+        "soh_bms": 0.8379
+      },
+      {
+        "hari": 3436,
+        "soh_bms": 0.8283
+      },
+      {
+        "hari": 3443,
+        "soh_bms": 0.823
+      },
+      {
+        "hari": 3450,
+        "soh_bms": 0.818
+      },
+      {
+        "hari": 3457,
+        "soh_bms": 0.8279
+      },
+      {
+        "hari": 3464,
+        "soh_bms": 0.8238
+      },
+      {
+        "hari": 3471,
+        "soh_bms": 0.8254
+      },
+      {
+        "hari": 3478,
+        "soh_bms": 0.833
+      },
+      {
+        "hari": 3485,
+        "soh_bms": 0.8315
+      },
+      {
+        "hari": 3492,
+        "soh_bms": 0.8194
+      },
+      {
+        "hari": 3499,
+        "soh_bms": 0.8227
+      },
+      {
+        "hari": 3506,
+        "soh_bms": 0.8224
+      },
+      {
+        "hari": 3513,
+        "soh_bms": 0.8201
+      },
+      {
+        "hari": 3520,
+        "soh_bms": 0.8214
+      },
+      {
+        "hari": 3527,
+        "soh_bms": 0.8192
+      },
+      {
+        "hari": 3534,
+        "soh_bms": 0.8152
+      },
+      {
+        "hari": 3541,
+        "soh_bms": 0.8154
+      },
+      {
+        "hari": 3548,
+        "soh_bms": 0.8199
+      },
+      {
+        "hari": 3555,
+        "soh_bms": 0.8286
+      },
+      {
+        "hari": 3562,
+        "soh_bms": 0.8113
+      },
+      {
+        "hari": 3569,
+        "soh_bms": 0.8009
+      },
+      {
+        "hari": 3576,
+        "soh_bms": 0.81
+      },
+      {
+        "hari": 3583,
+        "soh_bms": 0.814
+      },
+      {
+        "hari": 3590,
+        "soh_bms": 0.8136
+      },
+      {
+        "hari": 3597,
+        "soh_bms": 0.8139
+      },
+      {
+        "hari": 3604,
+        "soh_bms": 0.815
+      },
+      {
+        "hari": 3611,
+        "soh_bms": 0.8172
+      },
+      {
+        "hari": 3618,
+        "soh_bms": 0.8278
+      },
+      {
+        "hari": 3625,
+        "soh_bms": 0.8506
+      },
+      {
+        "hari": 3632,
+        "soh_bms": 0.805
+      },
+      {
+        "hari": 3639,
+        "soh_bms": 0.8105
+      },
+      {
+        "hari": 3646,
+        "soh_bms": 0.8103
+      },
+      {
+        "hari": 3653,
+        "soh_bms": 0.8243
+      },
+      {
+        "hari": 3660,
+        "soh_bms": 0.809
+      },
+      {
+        "hari": 3667,
+        "soh_bms": 0.8071
+      },
+      {
+        "hari": 3674,
+        "soh_bms": 0.8212
+      },
+      {
+        "hari": 3681,
+        "soh_bms": 0.8221
+      },
+      {
+        "hari": 3688,
+        "soh_bms": 0.8174
+      },
+      {
+        "hari": 3695,
+        "soh_bms": 0.8014
+      },
+      {
+        "hari": 3702,
+        "soh_bms": 0.8276
+      },
+      {
+        "hari": 3709,
+        "soh_bms": 0.8047
+      },
+      {
+        "hari": 3716,
+        "soh_bms": 0.8035
+      },
+      {
+        "hari": 3723,
+        "soh_bms": 0.8157
+      },
+      {
+        "hari": 3730,
+        "soh_bms": 0.7945
+      },
+      {
+        "hari": 3737,
+        "soh_bms": 0.8075
+      },
+      {
+        "hari": 3744,
+        "soh_bms": 0.8238
+      },
+      {
+        "hari": 3751,
+        "soh_bms": 0.8158
+      },
+      {
+        "hari": 3758,
+        "soh_bms": 0.8038
+      },
+      {
+        "hari": 3765,
+        "soh_bms": 0.8081
+      },
+      {
+        "hari": 3772,
+        "soh_bms": 0.81
+      },
+      {
+        "hari": 3779,
+        "soh_bms": 0.8171
+      },
+      {
+        "hari": 3786,
+        "soh_bms": 0.8152
+      },
+      {
+        "hari": 3793,
+        "soh_bms": 0.8118
+      },
+      {
+        "hari": 3800,
+        "soh_bms": 0.8061
+      },
+      {
+        "hari": 3807,
+        "soh_bms": 0.7992
+      },
+      {
+        "hari": 3814,
+        "soh_bms": 0.801
+      },
+      {
+        "hari": 3821,
+        "soh_bms": 0.8032
+      },
+      {
+        "hari": 3828,
+        "soh_bms": 0.8092
+      },
+      {
+        "hari": 3835,
+        "soh_bms": 0.8161
+      },
+      {
+        "hari": 3842,
+        "soh_bms": 0.8016
+      },
+      {
+        "hari": 3849,
+        "soh_bms": 0.8037
+      },
+      {
+        "hari": 3856,
+        "soh_bms": 0.8064
+      },
+      {
+        "hari": 3863,
+        "soh_bms": 0.8248
+      },
+      {
+        "hari": 3870,
+        "soh_bms": 0.7778
+      },
+      {
+        "hari": 3877,
+        "soh_bms": 0.8091
+      },
+      {
+        "hari": 3884,
+        "soh_bms": 0.8149
+      },
+      {
+        "hari": 3891,
+        "soh_bms": 0.817
+      },
+      {
+        "hari": 3898,
+        "soh_bms": 0.8031
+      },
+      {
+        "hari": 3905,
+        "soh_bms": 0.824
+      },
+      {
+        "hari": 3912,
+        "soh_bms": 0.8198
+      },
+      {
+        "hari": 3919,
+        "soh_bms": 0.7946
+      },
+      {
+        "hari": 3926,
+        "soh_bms": 0.7963
+      },
+      {
+        "hari": 3933,
+        "soh_bms": 0.798
+      },
+      {
+        "hari": 3940,
+        "soh_bms": 0.8058
+      },
+      {
+        "hari": 3947,
+        "soh_bms": 0.7961
+      },
+      {
+        "hari": 3954,
+        "soh_bms": 0.7975
+      },
+      {
+        "hari": 3961,
+        "soh_bms": 0.7963
+      },
+      {
+        "hari": 3968,
+        "soh_bms": 0.8054
+      },
+      {
+        "hari": 3975,
+        "soh_bms": 0.8029
+      },
+      {
+        "hari": 3982,
+        "soh_bms": 0.7969
       }
     ]
   },
@@ -583,429 +2288,429 @@
     "plts_id": "genting-contoh",
     "tersedia": true,
     "label_data": "simulasi",
-    "p_gagal_26_minggu": 0.008,
-    "minggu_tersisa": 102.3,
+    "p_gagal_26_minggu": 0.003,
+    "minggu_tersisa": 102.0,
     "fitur": {
-      "soh_bms": 0.8588,
-      "tren_soh": -0.0004,
-      "proyeksi_minggu": 152.9538
+      "soh_bms": 0.9279,
+      "tren_soh": -0.0002,
+      "proyeksi_minggu": 520.0
     },
     "riwayat_soh": [
       {
         "hari": 741,
-        "soh_bms": 0.8956
+        "soh_bms": 0.9549
       },
       {
         "hari": 748,
-        "soh_bms": 0.8811
+        "soh_bms": 0.9446
       },
       {
         "hari": 755,
-        "soh_bms": 0.8939
+        "soh_bms": 0.9357
       },
       {
         "hari": 762,
-        "soh_bms": 0.8944
+        "soh_bms": 0.9534
       },
       {
         "hari": 769,
-        "soh_bms": 0.8898
+        "soh_bms": 0.953
       },
       {
         "hari": 776,
-        "soh_bms": 0.9046
+        "soh_bms": 0.9382
       },
       {
         "hari": 783,
-        "soh_bms": 0.888
+        "soh_bms": 0.9327
       },
       {
         "hari": 790,
-        "soh_bms": 0.9005
+        "soh_bms": 0.9468
       },
       {
         "hari": 797,
-        "soh_bms": 0.8899
+        "soh_bms": 0.9393
       },
       {
         "hari": 804,
-        "soh_bms": 0.8846
+        "soh_bms": 0.9507
       },
       {
         "hari": 811,
-        "soh_bms": 0.8866
+        "soh_bms": 0.9335
       },
       {
         "hari": 818,
-        "soh_bms": 0.8863
+        "soh_bms": 0.9446
       },
       {
         "hari": 825,
-        "soh_bms": 0.8836
+        "soh_bms": 0.9496
       },
       {
         "hari": 832,
-        "soh_bms": 0.8808
+        "soh_bms": 0.934
       },
       {
         "hari": 839,
-        "soh_bms": 0.8922
+        "soh_bms": 0.9459
       },
       {
         "hari": 846,
-        "soh_bms": 0.8881
+        "soh_bms": 0.9338
       },
       {
         "hari": 853,
-        "soh_bms": 0.898
+        "soh_bms": 0.9479
       },
       {
         "hari": 860,
-        "soh_bms": 0.8806
+        "soh_bms": 0.9428
       },
       {
         "hari": 867,
-        "soh_bms": 0.88
+        "soh_bms": 0.955
       },
       {
         "hari": 874,
-        "soh_bms": 0.8846
+        "soh_bms": 0.9354
       },
       {
         "hari": 881,
-        "soh_bms": 0.8839
+        "soh_bms": 0.9324
       },
       {
         "hari": 888,
-        "soh_bms": 0.8878
+        "soh_bms": 0.9494
       },
       {
         "hari": 895,
-        "soh_bms": 0.8928
+        "soh_bms": 0.9468
       },
       {
         "hari": 902,
-        "soh_bms": 0.8785
+        "soh_bms": 0.951
       },
       {
         "hari": 909,
-        "soh_bms": 0.8847
+        "soh_bms": 0.9632
       },
       {
         "hari": 916,
-        "soh_bms": 0.8967
+        "soh_bms": 0.9285
       },
       {
         "hari": 923,
-        "soh_bms": 0.8771
+        "soh_bms": 0.9253
       },
       {
         "hari": 930,
-        "soh_bms": 0.8761
+        "soh_bms": 0.9298
       },
       {
         "hari": 937,
-        "soh_bms": 0.8672
+        "soh_bms": 0.9293
       },
       {
         "hari": 944,
-        "soh_bms": 0.8788
+        "soh_bms": 0.9494
       },
       {
         "hari": 951,
-        "soh_bms": 0.8716
+        "soh_bms": 0.9433
       },
       {
         "hari": 958,
-        "soh_bms": 0.8643
+        "soh_bms": 0.9368
       },
       {
         "hari": 965,
-        "soh_bms": 0.8693
+        "soh_bms": 0.941
       },
       {
         "hari": 972,
-        "soh_bms": 0.8966
+        "soh_bms": 0.9324
       },
       {
         "hari": 979,
-        "soh_bms": 0.8692
+        "soh_bms": 0.9372
       },
       {
         "hari": 986,
-        "soh_bms": 0.8994
+        "soh_bms": 0.9396
       },
       {
         "hari": 993,
-        "soh_bms": 0.8741
+        "soh_bms": 0.9343
       },
       {
         "hari": 1000,
-        "soh_bms": 0.8902
+        "soh_bms": 0.9188
       },
       {
         "hari": 1007,
-        "soh_bms": 0.882
+        "soh_bms": 0.9395
       },
       {
         "hari": 1014,
-        "soh_bms": 0.8852
+        "soh_bms": 0.9453
       },
       {
         "hari": 1021,
-        "soh_bms": 0.8723
+        "soh_bms": 0.9345
       },
       {
         "hari": 1028,
-        "soh_bms": 0.8847
+        "soh_bms": 0.9424
       },
       {
         "hari": 1035,
-        "soh_bms": 0.8834
+        "soh_bms": 0.9357
       },
       {
         "hari": 1042,
-        "soh_bms": 0.8794
+        "soh_bms": 0.9491
       },
       {
         "hari": 1049,
-        "soh_bms": 0.8729
+        "soh_bms": 0.927
       },
       {
         "hari": 1056,
-        "soh_bms": 0.8824
+        "soh_bms": 0.9462
       },
       {
         "hari": 1063,
-        "soh_bms": 0.8733
+        "soh_bms": 0.9578
       },
       {
         "hari": 1070,
-        "soh_bms": 0.872
+        "soh_bms": 0.9382
       },
       {
         "hari": 1077,
-        "soh_bms": 0.8748
+        "soh_bms": 0.9494
       },
       {
         "hari": 1084,
-        "soh_bms": 0.8746
+        "soh_bms": 0.9329
       },
       {
         "hari": 1091,
-        "soh_bms": 0.8519
+        "soh_bms": 0.9293
       },
       {
         "hari": 1098,
-        "soh_bms": 0.8625
+        "soh_bms": 0.953
       },
       {
         "hari": 1105,
-        "soh_bms": 0.8824
+        "soh_bms": 0.9242
       },
       {
         "hari": 1112,
-        "soh_bms": 0.8601
+        "soh_bms": 0.9438
       },
       {
         "hari": 1119,
-        "soh_bms": 0.8719
+        "soh_bms": 0.9187
       },
       {
         "hari": 1126,
-        "soh_bms": 0.8736
+        "soh_bms": 0.9476
       },
       {
         "hari": 1133,
-        "soh_bms": 0.8699
+        "soh_bms": 0.934
       },
       {
         "hari": 1140,
-        "soh_bms": 0.8903
+        "soh_bms": 0.9394
       },
       {
         "hari": 1147,
-        "soh_bms": 0.8761
+        "soh_bms": 0.9221
       },
       {
         "hari": 1154,
-        "soh_bms": 0.8667
+        "soh_bms": 0.9348
       },
       {
         "hari": 1161,
-        "soh_bms": 0.8689
+        "soh_bms": 0.9204
       },
       {
         "hari": 1168,
-        "soh_bms": 0.8727
+        "soh_bms": 0.9473
       },
       {
         "hari": 1175,
-        "soh_bms": 0.8707
+        "soh_bms": 0.9305
       },
       {
         "hari": 1182,
-        "soh_bms": 0.8661
+        "soh_bms": 0.9332
       },
       {
         "hari": 1189,
-        "soh_bms": 0.8695
+        "soh_bms": 0.9401
       },
       {
         "hari": 1196,
-        "soh_bms": 0.8661
+        "soh_bms": 0.9383
       },
       {
         "hari": 1203,
-        "soh_bms": 0.8584
+        "soh_bms": 0.9374
       },
       {
         "hari": 1210,
-        "soh_bms": 0.8663
+        "soh_bms": 0.9309
       },
       {
         "hari": 1217,
-        "soh_bms": 0.8722
+        "soh_bms": 0.95
       },
       {
         "hari": 1224,
-        "soh_bms": 0.8671
+        "soh_bms": 0.9302
       },
       {
         "hari": 1231,
-        "soh_bms": 0.8607
+        "soh_bms": 0.9207
       },
       {
         "hari": 1238,
-        "soh_bms": 0.8669
+        "soh_bms": 0.9414
       },
       {
         "hari": 1245,
-        "soh_bms": 0.8723
+        "soh_bms": 0.9321
       },
       {
         "hari": 1252,
-        "soh_bms": 0.8681
+        "soh_bms": 0.9272
       },
       {
         "hari": 1259,
-        "soh_bms": 0.87
+        "soh_bms": 0.9343
       },
       {
         "hari": 1266,
-        "soh_bms": 0.8661
+        "soh_bms": 0.9335
       },
       {
         "hari": 1273,
-        "soh_bms": 0.8513
+        "soh_bms": 0.9253
       },
       {
         "hari": 1280,
-        "soh_bms": 0.8502
+        "soh_bms": 0.9189
       },
       {
         "hari": 1287,
-        "soh_bms": 0.8508
+        "soh_bms": 0.9236
       },
       {
         "hari": 1294,
-        "soh_bms": 0.8553
+        "soh_bms": 0.9069
       },
       {
         "hari": 1301,
-        "soh_bms": 0.8651
+        "soh_bms": 0.9202
       },
       {
         "hari": 1308,
-        "soh_bms": 0.8648
+        "soh_bms": 0.9371
       },
       {
         "hari": 1315,
-        "soh_bms": 0.8644
+        "soh_bms": 0.9236
       },
       {
         "hari": 1322,
-        "soh_bms": 0.8491
+        "soh_bms": 0.9209
       },
       {
         "hari": 1329,
-        "soh_bms": 0.8779
+        "soh_bms": 0.9421
       },
       {
         "hari": 1336,
-        "soh_bms": 0.8471
+        "soh_bms": 0.9304
       },
       {
         "hari": 1343,
-        "soh_bms": 0.8738
+        "soh_bms": 0.9395
       },
       {
         "hari": 1350,
-        "soh_bms": 0.8624
+        "soh_bms": 0.947
       },
       {
         "hari": 1357,
-        "soh_bms": 0.877
+        "soh_bms": 0.9346
       },
       {
         "hari": 1364,
-        "soh_bms": 0.8483
+        "soh_bms": 0.9371
       },
       {
         "hari": 1371,
-        "soh_bms": 0.867
+        "soh_bms": 0.9276
       },
       {
         "hari": 1378,
-        "soh_bms": 0.856
+        "soh_bms": 0.9223
       },
       {
         "hari": 1385,
-        "soh_bms": 0.8404
+        "soh_bms": 0.9328
       },
       {
         "hari": 1392,
-        "soh_bms": 0.8519
+        "soh_bms": 0.9329
       },
       {
         "hari": 1399,
-        "soh_bms": 0.876
+        "soh_bms": 0.9246
       },
       {
         "hari": 1406,
-        "soh_bms": 0.8584
+        "soh_bms": 0.9012
       },
       {
         "hari": 1413,
-        "soh_bms": 0.8661
+        "soh_bms": 0.9484
       },
       {
         "hari": 1420,
-        "soh_bms": 0.8482
+        "soh_bms": 0.931
       },
       {
         "hari": 1427,
-        "soh_bms": 0.8642
+        "soh_bms": 0.9227
       },
       {
         "hari": 1434,
-        "soh_bms": 0.8565
+        "soh_bms": 0.9246
       },
       {
         "hari": 1441,
-        "soh_bms": 0.8618
+        "soh_bms": 0.9195
       },
       {
         "hari": 1448,
-        "soh_bms": 0.8504
+        "soh_bms": 0.9235
       },
       {
         "hari": 1455,
-        "soh_bms": 0.8518
+        "soh_bms": 0.9188
       },
       {
         "hari": 1462,
-        "soh_bms": 0.8447
+        "soh_bms": 0.9316
       }
     ]
   }

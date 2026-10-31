@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { ambilLaporanMalam, daftarPeringatan, dugaanPadam, kirimLaporanMalam, kirimPeringatan, malamIni, terapkanPeringatan, ubahStatusPeringatan, type Peringatan } from "./api";
+import { ambilLaporanMalam, daftarPeringatan, dugaanPadam, laporanContoh, kirimLaporanMalam, kirimPeringatan, malamIni, terapkanPeringatan, ubahStatusPeringatan, type Peringatan } from "./api";
 import { DAFTAR_PLTS } from "./data";
 
 describe("malamIni", () => {
@@ -72,12 +72,19 @@ describe("laporan malam", () => {
     expect(dugaanPadam(jawaban.map((j, i) => ({ plts_id: "parang", tanggal: `2026-10-0${i + 1}`, jawaban: j })))).toBe(padam);
   });
 
-  it("jawaban baru untuk malam yang sama menggantikan yang lama", async () => {
-    await kirimLaporanMalam({ plts_id: "parang", tanggal: "2026-10-30", jawaban: null });
-    await kirimLaporanMalam({ plts_id: "parang", tanggal: "2026-10-30", jawaban: "tidak" });
-    await kirimLaporanMalam({ plts_id: "parang", tanggal: "2026-10-31", jawaban: "tidak" });
+  it("jawaban baru untuk malam yang sama menggantikan yang lama dan menggantikan contoh", async () => {
+    await kirimLaporanMalam({ plts_id: "parang", tanggal: "2099-01-01", jawaban: null });
+    await kirimLaporanMalam({ plts_id: "parang", tanggal: "2099-01-01", jawaban: "ya" });
     const r = await ambilLaporanMalam("parang");
-    expect(r.laporan.map(x => x.jawaban)).toEqual(["tidak", "tidak"]);
-    expect(r.dugaan_padam).toBe(true);
+    expect(r.laporan.filter(x => x.tanggal === "2099-01-01").map(x => x.jawaban)).toEqual(["ya"]);
+    expect(r.laporan.at(-1)?.contoh).toBeUndefined();
+  });
+
+  it("contoh peragaan berakhir kemarin dan selaras dengan status", () => {
+    const parang = laporanContoh("parang", "2026-10-31");
+    expect(parang).toHaveLength(14);
+    expect(parang.at(-1)?.tanggal).toBe("2026-10-30");
+    expect(dugaanPadam(parang)).toBe(true);
+    expect(dugaanPadam(laporanContoh("sembur", "2026-10-31"))).toBe(false);
   });
 });

@@ -69,6 +69,11 @@ describe("validasiPrediksi", () => {
 });
 
 describe("validasiCahaya", () => {
+  it("setiap PLTS punya deret cahaya malam; contoh tidak masuk hasil uji", () => {
+    for (const p of DAFTAR_PLTS) expect(cahayaUntuk(p.id), p.id).toBeDefined();
+    expect(CAHAYA.desa.some(d => d.grup === "contoh")).toBe(false);
+  });
+
   it("setiap desa uji punya deret cahaya malam", () => {
     for (const p of DAFTAR_PLTS.filter(x => x.grup_uji)) expect(cahayaUntuk(p.id)).toBeDefined();
   });
@@ -79,8 +84,18 @@ describe("validasiCahaya", () => {
 });
 
 describe("validasiPanel", () => {
-  it("setiap PLTS bertitik OSM punya deret Sentinel-2", () => {
-    for (const p of DAFTAR_PLTS.filter(x => x.titik === "plts")) expect(panelUntuk(p.id)).toBeDefined();
+  it("setiap PLTS punya kartu panel, PLTS contoh selalu berlabel contoh", () => {
+    for (const p of DAFTAR_PLTS) {
+      expect(panelUntuk(p.id), p.id).toBeDefined();
+      if (p.label_data === "contoh") expect(panelUntuk(p.id)?.label_data).toBe("contoh");
+    }
+  });
+
+  it("setiap prediksi PLTS kasus nyata membawa catatan simulasi", () => {
+    for (const p of DAFTAR_PLTS.filter(x => x.label_data === "laporan")) {
+      const pr = prediksiUntuk(p.id);
+      expect(pr?.tersedia && pr.catatan, p.id).toBeTruthy();
+    }
   });
 
   it("menolak status perubahan yang tidak dikenal", () => {

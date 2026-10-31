@@ -11,6 +11,8 @@ export interface LaporanMalam {
   plts_id: string;
   tanggal: string;
   jawaban: Jawaban | null;
+  /** Contoh peragaan, bukan jawaban operator sungguhan. */
+  contoh?: boolean;
 }
 
 export interface RingkasanLaporanMalam {
@@ -70,8 +72,37 @@ export function dugaanPadam(laporan: LaporanMalam[]): boolean {
   return terakhir.length === n && terakhir.every(x => x.jawaban !== "ya");
 }
 
+// Contoh peragaan 14 malam terakhir (sampai kemarin), selaras dengan status di plts.json:
+// y = menyala, t = tidak menyala, - = tidak dijawab. Jawaban operator di browser menggantikan malam yang sama.
+const POLA_CONTOH: Record<string, string> = {
+  parang: "tt-ttttt-ttttt",
+  lakarama: "ttt-tttttt-ttt",
+  "burung-loe": "-ttttttttttttt",
+  "karimunjawa-contoh": "yyyyytyyyytyyy",
+  "genting-contoh": "yyyyyyyyyyyyyy",
+  sembur: "yyyyyyyyyyyyyy",
+  "batu-bingkung": "yyyyyyy-yyyyyy",
+};
+
+/** Tanggal WIB n hari sebelum `dari` (YYYY-MM-DD). */
+function mundur(dari: string, n: number): string {
+  const d = new Date(`${dari}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+
+export function laporanContoh(pltsId: string, hariIni = malamIni()): LaporanMalam[] {
+  const pola = POLA_CONTOH[pltsId] ?? "";
+  return [...pola].map((c, i) => ({
+    plts_id: pltsId, tanggal: mundur(hariIni, pola.length - i), contoh: true,
+    jawaban: c === "y" ? "ya" : c === "t" ? "tidak" : null,
+  }));
+}
+
 export async function ambilLaporanMalam(pltsId: string): Promise<RingkasanLaporanMalam> {
-  const milik = baca<LaporanMalam>("laporan_malam").filter(x => x.plts_id === pltsId).sort((a, b) => a.tanggal.localeCompare(b.tanggal));
+  const asli = baca<LaporanMalam>("laporan_malam").filter(x => x.plts_id === pltsId);
+  const tanggalAsli = new Set(asli.map(x => x.tanggal));
+  const milik = [...laporanContoh(pltsId).filter(x => !tanggalAsli.has(x.tanggal)), ...asli].sort((a, b) => a.tanggal.localeCompare(b.tanggal));
   return { plts_id: pltsId, dugaan_padam: dugaanPadam(milik), malam_berturut: ATURAN.malam_berturut_padam, laporan: milik.slice(-30) };
 }
 

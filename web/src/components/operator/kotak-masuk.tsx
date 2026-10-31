@@ -74,6 +74,7 @@ export function KotakMasuk({ pltsId, namaPlts }: { pltsId: string; namaPlts: str
         <span className="muted">{l.jawaban === "ya" ? "Menyala" : l.jawaban === "tidak" ? "Tidak menyala" : "Tidak dijawab"}</span>
       </li>)}</ol>
       {malam.dugaan_padam && <Badge tone="crit">Pengawas menerima tanda dugaan padam</Badge>}
+      {tujuh.some(l => l.contoh) && <p className="small muted">Riwayat sebelum malam ini adalah contoh peragaan.</p>}
     </section>}
 
     <h2 className="pesan-judul-bagian">Peringatan dari pengawas</h2>

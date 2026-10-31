@@ -128,6 +128,7 @@ function KartuBaterai({ prediksi }: { prediksi: PrediksiBaterai | undefined }) {
       <div><h2 id="baterai-judul">Prediksi baterai</h2><p>Peluang baterai mencapai akhir umur (kapasitas 80%) dalam {METRIK_BATERAI.horizon_minggu} minggu.</p></div>
       <Badge>Simulasi</Badge>
     </div>
+    {prediksi.catatan && <p className="catatan-simulasi" role="note">{prediksi.catatan}</p>}
 
     <div className="prediksi-angka">
       <div>
@@ -223,6 +224,7 @@ function KartuCahayaMalam({ plts }: { plts: Plts }) {
       <div><h2 id="cahaya-judul">Cahaya malam dari satelit</h2><p>Radiansi bulanan NASA Black Marble dibanding garis dasar {m.periode_dasar}.</p></div>
       <Badge tone={hasil.tone}>{hasil.label}</Badge>
     </div>
+    {deret.grup === "contoh" && <p className="catatan-simulasi" role="note">Data contoh untuk PLTS fiktif, bukan citra satelit. Hasil uji satelit asli ada di Analisis Cahaya Malam.</p>}
     <p className="prediksi-arti">{kalimat}</p>
     <div className="prediksi-angka">
       <div>
@@ -236,7 +238,7 @@ function KartuCahayaMalam({ plts }: { plts: Plts }) {
     </div>
     <GrafikCahaya desa={deret} rasio={m.rasio_anomali} />
     <p className="small muted catatan-bukti">
-      Data satelit asli, {deret.bulan_berdata} dari {deret.bulan_total} bulan berdata (sisanya tertutup awan atau berkualitas buruk). Nilai rata-rata {m.jendela}. Aturan deteksi ditetapkan sebelum data dilihat.{" "}
+      {deret.grup === "contoh" ? "Deret contoh untuk peragaan, " : "Data satelit asli, "}{deret.bulan_berdata} dari {deret.bulan_total} bulan berdata (sisanya tertutup awan atau berkualitas buruk). Nilai rata-rata {m.jendela}. Aturan deteksi ditetapkan sebelum data dilihat.{" "}
       <Link className="chip-sumber" href="/bukti/cahaya-malam">VNP46A3<ArrowRight size={12} strokeWidth={1.75} aria-hidden /></Link>
     </p>
   </section>;

@@ -101,22 +101,32 @@ def pilih_contoh(kondisi: np.ndarray) -> int:
 
 
 def prediksi_plts(mentah, fitur, p, minggu, uji_idx) -> list[dict]:
-    """Prediksi untuk PLTS di plts.json. Hanya PLTS contoh dan Pulau Sembur yang diberi lintasan simulasi."""
+    """Prediksi untuk setiap PLTS di plts.json dari lintasan baterai simulasi yang kondisinya sesuai laporan.
+
+    Tidak ada PLTS yang punya data BMS sungguhan. PLTS contoh memang fiktif; untuk PLTS kasus nyata, lintasan
+    simulasi dipakai untuk peragaan dan diberi catatan agar tidak dibaca sebagai pengukuran PLTS tersebut.
+    Setiap PLTS memakai baterai simulasi yang berbeda.
+    """
     p_uji, umur = p[uji_idx], fitur.umur_hari.to_numpy()[uji_idx]
+    baterai_uji = mentah.baterai.to_numpy()[uji_idx]
     syarat = {
+        # Kasus nyata: baterai rusak atau PLTS mangkrak bertahun-tahun -> dekat akhir umur.
+        "parang": (p_uji >= 0.9) & (umur > 4 * 365),
+        "lakarama": (p_uji >= 0.9) & (umur > 4 * 365),
+        "burung-loe": (p_uji >= 0.9) & (umur > 4 * 365),
+        # Menyala setelah perbaikan 2022 (sekitar 4 tahun) dan PLTS baru Desember 2025.
+        "batu-bingkung": (p_uji < 0.1) & (umur > 3 * 365) & (umur < 5 * 365),
+        "sembur": (p_uji < 0.05) & (umur < 365) & (umur > 200),
         "karimunjawa-contoh": (p_uji >= 0.7) & (p_uji < 0.9),
         "genting-contoh": (p_uji < 0.2) & (umur > 4 * 365),
-        "sembur": (p_uji < 0.05) & (umur < 365) & (umur > 200),
     }
+    terpakai: set[int] = set()
     keluar = []
     for plts in PLTS:
-        if plts.id not in syarat:
-            keluar.append({"plts_id": plts.id, "tersedia": False,
-                           "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"})
-            continue
-        i = uji_idx[pilih_contoh(syarat[plts.id])]
+        i = uji_idx[pilih_contoh(syarat[plts.id] & ~np.isin(baterai_uji, list(terpakai)))]
+        terpakai.add(int(mentah.baterai[i]))
         riwayat = mentah[(mentah.baterai == mentah.baterai[i]) & (mentah.hari <= mentah.hari[i])].tail(104)
-        keluar.append({
+        baris = {
             "plts_id": plts.id,
             "tersedia": True,
             "label_data": "simulasi",
@@ -125,7 +135,11 @@ def prediksi_plts(mentah, fitur, p, minggu, uji_idx) -> list[dict]:
             "fitur": {f: round(float(fitur.at[i, f]), 4) for f in FITUR},
             "riwayat_soh": [{"hari": int(h), "soh_bms": round(float(s), 4)}
                             for h, s in zip(riwayat.hari, riwayat.soh_bms)],
-        })
+        }
+        if plts.label_data == "laporan":
+            baris["catatan"] = ("PLTS ini tidak punya data BMS. Riwayat kapasitas diambil dari simulator untuk peragaan, "
+                                "dipilih sesuai kondisi di laporan, bukan pengukuran baterai PLTS ini.")
+        keluar.append(baris)
     return keluar
 
 

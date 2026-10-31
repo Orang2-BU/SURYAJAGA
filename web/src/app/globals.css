@@ -473,6 +473,9 @@ ol.riwayat-malam.baris li { display: inline-flex; gap: 6px; padding: 6px 10px; b
 }
 @media (max-width: 1199px) { .modal .section-heading { flex-direction: row; align-items: center; } }
 
+/* Data peragaan pada PLTS kasus nyata harus terbaca sebelum angkanya */
+.catatan-simulasi { margin: -6px 0 16px; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--color-status-warn-soft); color: var(--color-on-surface); font-size: 13px; line-height: 1.55; }
+
 /* T19: daftar PLTS (P4) dan detail peringatan (P6) */
 .urut { display: inline-flex; align-items: center; gap: 4px; background: transparent; color: inherit; font: inherit; padding: 0; min-height: 32px; border-radius: var(--radius-sm); }
 .urut:hover { color: var(--color-on-surface); }

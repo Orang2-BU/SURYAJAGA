@@ -57,7 +57,7 @@ export function TabelAset({ baris }: { baris: BarisAset[] }) {
 
   return <section className="card">
     <div className="section-heading">
-      <div><h2>Semua PLTS</h2><p>Klik judul kolom untuk mengurutkan. Prediksi baterai hanya untuk PLTS yang punya data BMS.</p></div>
+      <div><h2>Semua PLTS</h2><p>Klik judul kolom untuk mengurutkan. Prediksi baterai berasal dari data BMS simulasi; belum ada PLTS dengan data BMS lapangan.</p></div>
       <button type="button" className="button secondary" onClick={ekspor} disabled={tampil.length === 0}><Icon icon={Download} size={16} />Ekspor CSV</button>
     </div>
     <div className="pilih-pill filter-status" role="group" aria-label="Filter status">

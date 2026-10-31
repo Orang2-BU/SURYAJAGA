@@ -45,6 +45,23 @@ AMBANG_UBAH = 0.15      # [asumsi] beda NDVI yang dianggap perubahan tutupan nya
 SCL_CERAH = {2, 4, 5, 6, 7}
 
 os.environ.setdefault("GDAL_DISABLE_READDIR_ON_OPEN", "EMPTY_DIR")
+# Tanpa batas waktu, satu unduhan COG yang macet menghentikan skrip; adegan yang gagal dilewati dan dicatat.
+os.environ.setdefault("GDAL_HTTP_TIMEOUT", "60")
+os.environ.setdefault("GDAL_HTTP_MAX_RETRY", "3")
+
+# PLTS nyata tanpa poligon OSM: area panel ditafsirkan dari citra Esri World Imagery (31 Okt 2026), belum
+# diverifikasi di lapangan. Persegi 18 x 12 m di tengah permukiman, sekitar 1,3 km utara titik pusat desa.
+POLIGON_MANUAL = {
+    "lakarama": {
+        "sumber": "Penafsiran citra Esri World Imagery, 31 Okt 2026, belum diverifikasi lapangan",
+        "geom": {"type": "Polygon", "coordinates": [[(122.722681, -4.523832), (122.722843, -4.523832),
+                                                     (122.722843, -4.523940), (122.722681, -4.523940),
+                                                     (122.722681, -4.523832)]]},
+    },
+}
+# PLTS contoh bersifat fiktif sehingga tidak punya area panel nyata untuk dibaca satelit; deret berikut adalah
+# contoh berlabel (panel terpasang sejak awal, NDVI rendah dan stabil) agar kartu P3 dapat diperagakan.
+CONTOH = {"karimunjawa-contoh": 0.16, "genting-contoh": 0.19}
 
 
 def poligon_osm(way: str) -> dict:
@@ -120,13 +137,15 @@ def baca_adegan(item, geom: dict, token: str) -> dict | None:
 
 
 def main() -> None:
-    plts = [p for p in json.loads(PLTS_JSON.read_text(encoding="utf-8")) if p["titik"] == "plts"]
+    semua = json.loads(PLTS_JSON.read_text(encoding="utf-8"))
+    plts = [p for p in semua if p["titik"] == "plts" or p["id"] in POLIGON_MANUAL]
     katalog = Client.open(STAC)
     simpanan = json.loads(SIMPANAN.read_text(encoding="utf-8")) if SIMPANAN.exists() else {}
     hasil = []
     for p in plts:
-        way = re.search(r"way (\d+)", p["sumber_lokasi"]).group(1)
-        geom = poligon_osm(way)
+        manual = POLIGON_MANUAL.get(p["id"])
+        way = None if manual else re.search(r"way (\d+)", p["sumber_lokasi"]).group(1)
+        geom = manual["geom"] if manual else poligon_osm(way)
         with urllib.request.urlopen(SAS, timeout=60) as r:
             token = json.load(r)["token"]  # SAS berlaku ~45 menit; diminta ulang per PLTS
         tahunan = []
@@ -155,7 +174,12 @@ def main() -> None:
             SIMPANAN.write_text(json.dumps(simpanan), encoding="utf-8")
             print(p["id"], t, tahunan[-1], flush=True)
         s, beda = status(tahunan)
-        hasil.append({"plts_id": p["id"], "osm_way": way, "status": s, "beda_ndvi": beda, "tahunan": tahunan})
+        hasil.append({"plts_id": p["id"], "osm_way": way, "sumber_poligon": manual["sumber"] if manual else "OpenStreetMap",
+                      "label_data": "asli", "status": s, "beda_ndvi": beda, "tahunan": tahunan})
+    for pid, nilai in CONTOH.items():
+        tahunan = [{"tahun": t, "adegan": 0, "ndvi_dalam": nilai, "ndvi_sekitar": 0.62} for t in TAHUN]
+        hasil.append({"plts_id": pid, "osm_way": None, "sumber_poligon": "Data contoh", "label_data": "contoh",
+                      "status": status(tahunan)[0], "beda_ndvi": status(tahunan)[1], "tahunan": tahunan})
     metode = {"produk": "Sentinel-2 L2A (ESA Copernicus) lewat Microsoft Planetary Computer", "musim": "Juni-Oktober",
               "adegan_per_tahun": ADEGAN_PER_TAHUN, "cerah_min": CERAH_MIN, "cincin_m": CINCIN * 10, "ambang_ubah": AMBANG_UBAH,
               "poligon": "OpenStreetMap (ODbL)"}

@@ -19,6 +19,8 @@ import json
 import statistics
 from pathlib import Path
 
+import numpy as np
+
 AKAR = Path(__file__).resolve().parent.parent
 DESA_UJI = Path(__file__).resolve().parent / "desa_uji.json"
 MASUKAN = AKAR / "data" / "cahaya"
@@ -87,6 +89,16 @@ def baca_csv(path: Path, kunci: str) -> dict[str, list[dict]]:
     return hasil
 
 
+# PLTS contoh (fiktif) tidak termasuk desa uji. Deret contoh berlabel agar kartu P3 dapat diperagakan: kalender
+# bulan/malam mengikuti Parang, radiansi = dasar + musiman kecil + derau (benih tetap). Tidak masuk hasil uji.
+CONTOH = {"karimunjawa-contoh": ("PLTS contoh Karimunjawa", 1.2), "genting-contoh": ("PLTS contoh Pulau Genting", 0.9)}
+
+
+def deret_contoh(kalender: list[dict], kunci: str, dasar: float, rng: np.random.Generator) -> list[dict]:
+    return [{kunci: x[kunci], "radiansi": round(float(max(0.0, dasar * (1 + 0.1 * np.sin(i / 2) + rng.normal(0, 0.08)))), 3),
+             "piksel_valid": 25} for i, x in enumerate(kalender)]
+
+
 def main() -> None:
     desa = json.loads(DESA_UJI.read_text(encoding="utf-8"))["desa"]
     bulanan, harian = baca_csv(MASUKAN / "bulanan.csv", "bulan"), baca_csv(MASUKAN / "harian.csv", "tanggal")
@@ -103,7 +115,12 @@ def main() -> None:
     for d in desa:
         b, h = bulanan.get(d["id"], []), harian.get(d["id"], [])
         hasil.append({"desa_id": d["id"], "nama": d["nama"], "grup": d["grup"], **nilai_desa(b, h), "bulanan": b, "harian": h})
-    KELUARAN.write_text(json.dumps({"metode": metode, "desa": hasil}, ensure_ascii=False) + "\n", encoding="utf-8")
+    rng = np.random.default_rng(26)
+    contoh = []
+    for pid, (nama, dasar) in CONTOH.items():
+        b, h = deret_contoh(bulanan["parang"], "bulan", dasar, rng), deret_contoh(harian["parang"], "tanggal", dasar, rng)
+        contoh.append({"desa_id": pid, "nama": nama, "grup": "contoh", **nilai_desa(b, h), "bulanan": b, "harian": h})
+    KELUARAN.write_text(json.dumps({"metode": metode, "desa": hasil, "contoh": contoh}, ensure_ascii=False) + "\n", encoding="utf-8")
     for r in hasil:
         print(r["desa_id"], r["grup"], r["status"], r["bulan_anomali_berturut"], r["anomali_mulai"], r["malam_gelap"])
 

@@ -50,6 +50,7 @@ export function KartuLaporanMalam({ pltsId }: { pltsId: string }) {
           <span>{TANGGAL.format(new Date(`${l.tanggal}T00:00:00Z`))}</span>
           <span className="sr-only">{l.jawaban === "ya" ? "menyala" : l.jawaban === "tidak" ? "tidak menyala" : "tidak dijawab"}</span>
         </li>)}</ol>
+        {data.laporan.some(l => l.contoh) && <p className="small muted catatan-bukti">Sebagian jawaban adalah contoh peragaan, bukan jawaban operator sungguhan. Jawaban dari peran Operator di browser ini menggantikannya.</p>}
       </>)}
   </section>;
 }

@@ -93,6 +93,8 @@ export type PrediksiBaterai =
     plts_id: string;
     tersedia: true;
     label_data: "simulasi";
+    /** Ada untuk PLTS kasus nyata: lintasan simulasi untuk peragaan, bukan pengukuran BMS PLTS itu. */
+    catatan?: string;
     p_gagal_26_minggu: number;
     minggu_tersisa: number;
     fitur: { soh_bms: number; tren_soh: number; proyeksi_minggu: number };
@@ -143,7 +145,7 @@ export type StatusCahaya = "terdeteksi" | "tidak_terdeteksi" | "sinyal_lemah";
 export interface DeretCahaya {
   desa_id: string;
   nama: string;
-  grup: "mangkrak" | "pembanding";
+  grup: "mangkrak" | "pembanding" | "contoh";
   garis_dasar: number | null;
   status: StatusCahaya;
   bulan_anomali_berturut: number;
@@ -169,27 +171,32 @@ export interface MetodeCahaya {
 
 const STATUS_CAHAYA: StatusCahaya[] = ["terdeteksi", "tidak_terdeteksi", "sinyal_lemah"];
 
-export function validasiCahaya(data: unknown): { metode: MetodeCahaya; desa: DeretCahaya[] } {
-  const d = data as { metode?: MetodeCahaya; desa?: unknown };
+/** desa = hasil uji asli (P9); contoh = deret contoh berlabel untuk PLTS fiktif, tidak termasuk hasil uji. */
+export function validasiCahaya(data: unknown): { metode: MetodeCahaya; desa: DeretCahaya[]; contoh: DeretCahaya[] } {
+  const d = data as { metode?: MetodeCahaya; desa?: unknown; contoh?: unknown };
   if (!d || typeof d.metode?.rasio_anomali !== "number" || !Array.isArray(d.desa)) throw new Error("cahaya.json tidak valid");
   d.desa.forEach((x: DeretCahaya, i) => {
     if (!x || typeof x.desa_id !== "string" || !STATUS_CAHAYA.includes(x.status) || !Array.isArray(x.bulanan) || x.bulanan.length < 2)
       throw new Error(`cahaya.json desa ${i} tidak valid`);
   });
-  return d as { metode: MetodeCahaya; desa: DeretCahaya[] };
+  if (!Array.isArray(d.contoh) || d.contoh.some((x: DeretCahaya) => x?.grup !== "contoh")) throw new Error("cahaya.json bagian contoh tidak valid");
+  return d as { metode: MetodeCahaya; desa: DeretCahaya[]; contoh: DeretCahaya[] };
 }
 
 export const CAHAYA = validasiCahaya(cahayaMentah);
 
 export function cahayaUntuk(id: string): DeretCahaya | undefined {
-  return CAHAYA.desa.find(d => d.desa_id === id);
+  return CAHAYA.desa.find(d => d.desa_id === id) ?? CAHAYA.contoh.find(d => d.desa_id === id);
 }
 
 // Kondisi panel dari Sentinel-2 (ditulis analisis/panel/analisis.py, 03-ARCHITECTURE Q12).
 
 export interface KondisiPanel {
   plts_id: string;
-  osm_way: string;
+  /** null bila poligon bukan dari OSM (penafsiran citra) atau PLTS contoh. */
+  osm_way: string | null;
+  sumber_poligon: string;
+  label_data: "asli" | "contoh";
   status: "naik" | "turun" | "stabil" | "data_kurang";
   beda_ndvi: number | null;
   tahunan: { tahun: number; adegan: number; ndvi_dalam: number | null; ndvi_sekitar: number | null }[];

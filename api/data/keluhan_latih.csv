@@ -1,0 +1,150 @@
+teks,kategori
+"baterai cepat habis",baterai
+"baterai cepet abis padahal baru dicas",baterai
+"listrik malam cuma bertahan beberapa jam",baterai
+"jam 10 malam listrik sudah padam karena baterai habis",baterai
+"SOC baterai turun drastis malam hari",baterai
+"persentase baterai anjlok",baterai
+"baterai tidak bisa terisi penuh",baterai
+"pengisian baterai lambat sekali",baterai
+"baterai panas",baterai
+"suhu ruang baterai tinggi sekali",baterai
+"BMS menunjukkan peringatan",baterai
+"alarm BMS menyala",baterai
+"lampu indikator baterai warna merah",baterai
+"tegangan baterai rendah",baterai
+"voltase aki drop",baterai
+"aki soak",baterai
+"aki gak kuat semalaman",baterai
+"daya simpan baterai menurun dibanding tahun lalu",baterai
+"baterai ora kuat nganti esuk",baterai
+"modul baterai ada yang mati",baterai
+"baterai lithium nya kayaknya rusak",baterai
+"listrik habis sebelum tengah malam",baterai
+"stok listrik malam kurang terus",baterai
+"cadangan listrik habis kalau hujan seharian",baterai
+"angka kapasitas baterai di aplikasi turun",baterai
+"inverter tidak menyala",inverter
+"inverter mati",inverter
+"inverter gak mau on",inverter
+"kode error di inverter",inverter
+"layar inverter menampilkan pesan kesalahan",inverter
+"inverter berbunyi beep panjang",inverter
+"alarm inverter bunyi",inverter
+"inverter berisik",inverter
+"inverter mendengung",inverter
+"inverter kepanasan",inverter
+"kipas pendingin inverter macet",inverter
+"inverter sering restart",inverter
+"inverter hidup mati sendiri",inverter
+"lampu fault inverter merah",inverter
+"inverter trip",inverter
+"inverter rusak setelah kena petir",inverter
+"inverter bau panas",inverter
+"display inverter blank",inverter
+"inverter ga ngeluarin listrik ke rumah",inverter
+"output inverter nol",inverter
+"lampu indikator inverter kedip kedip",inverter
+"inverter e rusak ora urip",inverter
+"mesin pengubah listrik di ruang kontrol mati",inverter
+"tampilan inverter error grid",inverter
+"panel surya kotor",panel
+"panel berdebu tebal",panel
+"kotoran burung di atas panel",panel
+"panel belum pernah dibersihkan",panel
+"kaca panel pecah",panel
+"permukaan panel retak",panel
+"panel tertutup bayangan pohon",panel
+"bayangan bangunan menutupi panel",panel
+"daun daun numpuk di panel",panel
+"produksi panel turun",panel
+"daya panel rendah walau cerah",panel
+"panel surya tidak menghasilkan listrik",panel
+"warna panel berubah kekuningan",panel
+"ada bintik coklat di sel panel",panel
+"dudukan panel longgar",panel
+"penyangga panel berkarat",panel
+"panel miring kena angin",panel
+"lumut di panel",panel
+"panel kena cipratan lumpur",panel
+"rumput menutupi panel",panel
+"tanaman merambat ke panel",panel
+"panel e reged",panel
+"array panel sebagian tidak bekerja",panel
+"string panel tidak ada arus",panel
+"modul surya ada yang hangus warnanya",panel
+"kabel terbakar",kabel
+"kabel meleleh",kabel
+"bau kabel gosong",kabel
+"bau terbakar di kotak panel listrik",kabel
+"ada asap dari sambungan",kabel
+"percikan listrik di terminal",kabel
+"kabel putus",kabel
+"kabel jaringan ke rumah putus",kabel
+"tikus menggerogoti kabel",kabel
+"kabel dimakan hewan",kabel
+"terminal berkarat",kabel
+"konektor kabel kendor",kabel
+"sambungan kabel longgar",kabel
+"MCB turun sendiri",kabel
+"MCB jatuh terus",kabel
+"sekring putus",kabel
+"fuse putus",kabel
+"tiang listrik roboh",kabel
+"kabel jaringan kendor melorot",kabel
+"kabel kesetrum kalau dipegang",kabel
+"isolasi kabel mengelupas",kabel
+"kabel e pedot",kabel
+"sambungan kabel basah kena hujan",kabel
+"kabel tanah terkelupas",kabel
+"grounding putus",kabel
+"warga pakai alat listrik besar",beban
+"rice cooker dipakai banyak rumah",beban
+"warga masak nasi pakai magic com",beban
+"ada yang pakai kulkas besar",beban
+"freezer warga bikin listrik turun",beban
+"pemakaian listrik berlebih",beban
+"beban terlalu besar",beban
+"beban malam naik",beban
+"listrik padam saat semua orang pakai",beban
+"listrik turun waktu jam ramai",beban
+"ada yang pasang pompa air",beban
+"pompa air bikin listrik jeglek",beban
+"warga pakai setrika",beban
+"setrika listrik bikin padam",beban
+"mesin las dipakai warga",beban
+"warga pakai mesin gerinda",beban
+"sound system hajatan bikin mati",beban
+"hajatan pakai listrik banyak",beban
+"warung pakai dispenser dan kulkas",beban
+"pemakaian melebihi kuota rumah",beban
+"warga nambah peralatan listrik baru",beban
+"listrik anjlok saat mesin dinyalakan",beban
+"akeh sing nganggo rice cooker",beban
+"water heater dipakai warga",beban
+"ac dipasang di rumah warga",beban
+"iuran warga menunggak",lainnya
+"pembayaran iuran listrik",lainnya
+"cara membuat laporan",lainnya
+"laporan ke dinas",lainnya
+"gembok ruang kontrol rusak",lainnya
+"ada orang tidak dikenal masuk area",lainnya
+"pencurian di area PLTS",lainnya
+"pagar rusak",lainnya
+"hewan ternak masuk area PLTS",lainnya
+"meteran rumah tidak berputar",lainnya
+"kwh meter warga rusak",lainnya
+"warga minta tambah jam nyala",lainnya
+"jadwal nyala listrik",lainnya
+"minta suku cadang",lainnya
+"siapa kontak dinas energi",lainnya
+"lampu jalan mati satu",lainnya
+"bohlam rumah warga putus",lainnya
+"buku catatan habis",lainnya
+"pergantian operator koperasi",lainnya
+"pelatihan operator kapan",lainnya
+"atap ruang kontrol bocor",lainnya
+"cat bangunan mengelupas",lainnya
+"rapat koperasi soal listrik",lainnya
+"tagihan iuran naik",lainnya
+"warga baru minta disambung",lainnya

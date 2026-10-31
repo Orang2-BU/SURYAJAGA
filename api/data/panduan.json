@@ -1,0 +1,84 @@
+{
+  "ditinjau": false,
+  "catatan": "Draf tim, belum ditinjau teknisi listrik. Langkah dibatasi pada tindakan yang aman untuk operator non-teknisi; semua pekerjaan di dalam perangkat dan sambungan diserahkan ke teknisi.",
+  "topik": [
+    {
+      "kategori": "baterai",
+      "label": "Baterai",
+      "judul": "Baterai cepat habis atau memberi peringatan",
+      "tingkat_bahaya": "sedang",
+      "wajib_teknisi": false,
+      "langkah": [
+        "Catat persentase dan tegangan baterai di layar monitor pada pagi dan sore hari ini.",
+        "Pastikan ventilasi ruang baterai terbuka dan tidak terhalang barang. Jangan menyentuh terminal baterai.",
+        "Minta warga mematikan alat pemanas dan mesin setelah magrib sampai baterai pulih.",
+        "Kirim foto layar monitor atau BMS lewat percakapan ini.",
+        "Bila baterai terasa panas, menggembung, atau berbau, keluar dari ruangan dan tekan Hubungi teknisi."
+      ]
+    },
+    {
+      "kategori": "inverter",
+      "label": "Inverter",
+      "judul": "Inverter mati, berbunyi, atau menampilkan kode error",
+      "tingkat_bahaya": "sedang",
+      "wajib_teknisi": false,
+      "langkah": [
+        "Foto layar inverter dan catat kode error yang muncul.",
+        "Periksa lubang udara dan kipas inverter dari luar: singkirkan barang atau debu yang menghalangi.",
+        "Nyalakan ulang inverter hanya dengan urutan di buku manual yang ditempel di ruang kontrol. Jangan membuka tutup inverter.",
+        "Bila error yang sama muncul lagi setelah dinyalakan ulang, berhenti di sini dan tekan Hubungi teknisi dengan kode error tadi."
+      ]
+    },
+    {
+      "kategori": "panel",
+      "label": "Panel surya",
+      "judul": "Panel kotor, terhalang, atau dayanya turun",
+      "tingkat_bahaya": "rendah",
+      "wajib_teknisi": false,
+      "langkah": [
+        "Bersihkan panel pada pagi hari sebelum pukul 08.00 atau sore setelah pukul 16.00, saat panel tidak panas.",
+        "Pakai air bersih dan kain atau sikat lembut. Jangan memakai sabun keras dan jangan menyiram panel yang panas dengan air dingin.",
+        "Jangan menginjak atau menaiki panel. Bersihkan dari pinggir dengan gagang panjang.",
+        "Pangkas ranting, rumput, atau tanaman yang menutupi panel.",
+        "Bila kaca panel retak atau pecah, jangan disentuh. Foto dari jauh dan tekan Hubungi teknisi."
+      ]
+    },
+    {
+      "kategori": "kabel",
+      "label": "Kabel dan sambungan",
+      "judul": "Kabel putus, sambungan rusak, atau pemutus sering turun",
+      "tingkat_bahaya": "tinggi",
+      "wajib_teknisi": true,
+      "langkah": [
+        "Jangan menyentuh kabel, terminal, atau sambungan, walaupun terlihat aman.",
+        "Jauhkan warga dan anak-anak dari area kabel yang rusak.",
+        "Foto kerusakan dari jarak aman.",
+        "Teknisi sudah diberi tahu lewat percakapan ini. Tunggu arahan teknisi sebelum menyalakan apa pun."
+      ]
+    },
+    {
+      "kategori": "beban",
+      "label": "Beban berlebih",
+      "judul": "Listrik padam saat banyak alat dipakai bersamaan",
+      "tingkat_bahaya": "rendah",
+      "wajib_teknisi": false,
+      "langkah": [
+        "Catat jam padam dan alat yang sedang dipakai warga saat itu.",
+        "Umumkan ke warga: alat pemanas (rice cooker, setrika, pemanas air) dan mesin (pompa, mesin las) dipakai siang hari saat matahari terik, bukan malam.",
+        "Sebelum menyalakan kembali listrik desa, minta warga mematikan alat besar lebih dulu.",
+        "Bahas aturan pemakaian alat besar di rapat koperasi berikutnya."
+      ]
+    },
+    {
+      "kategori": "lainnya",
+      "label": "Lainnya",
+      "judul": "Urusan di luar perangkat listrik",
+      "tingkat_bahaya": "rendah",
+      "wajib_teknisi": false,
+      "langkah": [
+        "Catat masalahnya di buku operator.",
+        "Sampaikan ke pengurus koperasi. Asisten ini hanya memandu masalah perangkat PLTS."
+      ]
+    }
+  ]
+}

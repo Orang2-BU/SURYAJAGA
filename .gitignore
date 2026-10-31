@@ -1,0 +1,26 @@
+# Node / Next.js
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+*.tsbuildinfo
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Rahasia
+.env
+.env.local
+
+# Data mentah besar (dihasilkan ulang lewat skrip)
+analisis/data/
+
+# Model hasil latih (dibuat ulang lewat python -m baterai.latih)
+analisis/models/
+
+# Data demo API (peringatan, laporan malam)
+api/data/peringatan.json
+api/data/laporan_malam.json

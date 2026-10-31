@@ -1,0 +1,99 @@
+{
+  "model": "baterai-v2 (HistGradientBoosting, scikit-learn 1.8, fitur kondisi kapasitas saja)",
+  "catatan_metode": "Versi 1 (ditambah suhu, DoD, siklus, umur): PR-AUC simulasi 0,811 tetapi 0,167 di sel nyata HUST. Versi 2 dipilih setelah melihat hasil HUST, sehingga HUST bukan lagi uji buta. Ambang status adalah ambang awal yang wajib dikalibrasi dengan data lapangan.",
+  "data": "Simulasi berbasis literatur (bukan data lapangan)",
+  "hash_data": "4bf0dad1b82b",
+  "horizon_minggu": 26,
+  "jumlah_baterai": {
+    "latih": 960,
+    "uji": 240
+  },
+  "jumlah_catatan_uji": 148004,
+  "positif_uji": 4162,
+  "pr_auc": 0.701,
+  "per_ambang": [
+    {
+      "ambang": 0.5,
+      "recall": 0.658,
+      "presisi": 0.71,
+      "recall_aus": 0.749,
+      "recall_mendadak": 0.09
+    },
+    {
+      "ambang": 0.7,
+      "recall": 0.468,
+      "presisi": 0.809,
+      "recall_aus": 0.536,
+      "recall_mendadak": 0.049
+    },
+    {
+      "ambang": 0.9,
+      "recall": 0.121,
+      "presisi": 0.906,
+      "recall_aus": 0.139,
+      "recall_mendadak": 0.01
+    }
+  ],
+  "pembanding_tanpa_ml": {
+    "aturan": "kapasitas BMS (rata-rata 26 minggu) <= 0.82",
+    "recall": 0.902,
+    "presisi": 0.24,
+    "recall_aus": 1.0,
+    "recall_mendadak": 0.295
+  },
+  "mae_minggu_tersisa": {
+    "nilai": 19.05,
+    "cakupan": "catatan uji dari baterai yang gagal dalam 26 minggu"
+  },
+  "fitur_penting": [
+    {
+      "fitur": "soh_bms",
+      "nama": "Kapasitas terbaca BMS (rata-rata 26 minggu)",
+      "kontribusi": 0.6452
+    },
+    {
+      "fitur": "tren_soh",
+      "nama": "Laju penurunan kapasitas (52 minggu)",
+      "kontribusi": 0.0206
+    },
+    {
+      "fitur": "proyeksi_minggu",
+      "nama": "Proyeksi minggu sampai kapasitas 80%",
+      "kontribusi": 0.0169
+    }
+  ],
+  "batas_minggu_tersisa": 104,
+  "uji_silang": {
+    "dataset": "HUST, 77 sel LFP/grafit 1,1 Ah, 30 °C (Ma dkk., 2022; doi:10.17632/nsc7hnsg4s.2, CC BY 4.0)",
+    "pemetaan": "1 siklus uji = 1 hari operasi; SOH relatif kapasitas awal sel",
+    "jumlah_sel": 77,
+    "sel_mencapai_akhir_umur": 77,
+    "jumlah_catatan": 18615,
+    "positif": 2011,
+    "pr_auc": 0.731,
+    "per_ambang": [
+      {
+        "ambang": 0.5,
+        "recall": 0.078,
+        "presisi": 1.0,
+        "recall_aus": 0.078,
+        "recall_mendadak": null
+      },
+      {
+        "ambang": 0.7,
+        "recall": 0.078,
+        "presisi": 1.0,
+        "recall_aus": 0.078,
+        "recall_mendadak": null
+      },
+      {
+        "ambang": 0.9,
+        "recall": 0.0,
+        "presisi": 0.0,
+        "recall_aus": 0.0,
+        "recall_mendadak": null
+      }
+    ],
+    "median_p_pada_positif": 0.045
+  }
+}

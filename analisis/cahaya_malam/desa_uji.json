@@ -1,0 +1,46 @@
+{
+  "dikunci_pada": "2026-10-30",
+  "catatan": "Ditetapkan sebelum data satelit dilihat. Perubahan wajib izin user dan dicatat (06-WORKFLOW).",
+  "desa": [
+    {
+      "id": "parang",
+      "nama": "Parang",
+      "grup": "mangkrak",
+      "lat": -5.7440683,
+      "lon": 110.2424772,
+      "sumber": "https://www.detik.com/jateng/berita/d-5979817/miris-hampir-semua-plts-di-parang-karimunjawa-rusak-sejak-2019"
+    },
+    {
+      "id": "lakarama",
+      "nama": "Lakarama",
+      "grup": "mangkrak",
+      "lat": -4.5350276,
+      "lon": 122.7236912,
+      "sumber": "https://sultra.antaranews.com/berita/492426/warga-di-towea-muna-keluhkan-sudah-5-tahun-plts-tidak-berfungsi-normal"
+    },
+    {
+      "id": "burung-loe",
+      "nama": "Pulau Buhung Pitue",
+      "grup": "mangkrak",
+      "lat": -5.1205104,
+      "lon": 120.3918754,
+      "sumber": "https://mongabay.co.id/2020/10/16/rusak-dan-mangkraknya-pembangkit-surya-di-kepulauan-sembilan-sinjai-dimana-masalahnya/"
+    },
+    {
+      "id": "sembur",
+      "nama": "Pulau Sembur",
+      "grup": "pembanding",
+      "lat": 0.6817473,
+      "lon": 104.2841202,
+      "sumber": "https://listrikindonesia.com/detail/18748/plts-desa-berbasis-koperasi-resmi-beroperasi-di-pulau-sembur"
+    },
+    {
+      "id": "batu-bingkung",
+      "nama": "Batu Bingkung",
+      "grup": "pembanding",
+      "lat": -7.3683708,
+      "lon": 121.1260432,
+      "sumber": "https://wartaekonomi.co.id/read391288/plts-terpusat-sudah-aktif-24-jam-warga-desa-batu-bingkung-merdeka-listrik"
+    }
+  ]
+}

@@ -1,0 +1,1012 @@
+[
+  {
+    "plts_id": "parang",
+    "tersedia": false,
+    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
+  },
+  {
+    "plts_id": "lakarama",
+    "tersedia": false,
+    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
+  },
+  {
+    "plts_id": "burung-loe",
+    "tersedia": false,
+    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
+  },
+  {
+    "plts_id": "sembur",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.002,
+    "minggu_tersisa": 103.4,
+    "fitur": {
+      "soh_bms": 0.9596,
+      "tren_soh": -0.0012,
+      "proyeksi_minggu": 135.2167
+    },
+    "riwayat_soh": [
+      {
+        "hari": 6,
+        "soh_bms": 0.9721
+      },
+      {
+        "hari": 13,
+        "soh_bms": 0.9687
+      },
+      {
+        "hari": 20,
+        "soh_bms": 0.9711
+      },
+      {
+        "hari": 27,
+        "soh_bms": 0.9794
+      },
+      {
+        "hari": 34,
+        "soh_bms": 0.976
+      },
+      {
+        "hari": 41,
+        "soh_bms": 0.9684
+      },
+      {
+        "hari": 48,
+        "soh_bms": 0.9766
+      },
+      {
+        "hari": 55,
+        "soh_bms": 0.9746
+      },
+      {
+        "hari": 62,
+        "soh_bms": 0.972
+      },
+      {
+        "hari": 69,
+        "soh_bms": 0.9519
+      },
+      {
+        "hari": 76,
+        "soh_bms": 0.9666
+      },
+      {
+        "hari": 83,
+        "soh_bms": 0.9759
+      },
+      {
+        "hari": 90,
+        "soh_bms": 0.9551
+      },
+      {
+        "hari": 97,
+        "soh_bms": 0.9704
+      },
+      {
+        "hari": 104,
+        "soh_bms": 0.9619
+      },
+      {
+        "hari": 111,
+        "soh_bms": 0.9551
+      },
+      {
+        "hari": 118,
+        "soh_bms": 0.9618
+      },
+      {
+        "hari": 125,
+        "soh_bms": 0.9458
+      },
+      {
+        "hari": 132,
+        "soh_bms": 0.9656
+      },
+      {
+        "hari": 139,
+        "soh_bms": 0.9707
+      },
+      {
+        "hari": 146,
+        "soh_bms": 0.9404
+      },
+      {
+        "hari": 153,
+        "soh_bms": 0.9496
+      },
+      {
+        "hari": 160,
+        "soh_bms": 0.9615
+      },
+      {
+        "hari": 167,
+        "soh_bms": 0.9605
+      },
+      {
+        "hari": 174,
+        "soh_bms": 0.9376
+      },
+      {
+        "hari": 181,
+        "soh_bms": 0.9342
+      },
+      {
+        "hari": 188,
+        "soh_bms": 0.9477
+      },
+      {
+        "hari": 195,
+        "soh_bms": 0.9409
+      },
+      {
+        "hari": 202,
+        "soh_bms": 0.9497
+      }
+    ]
+  },
+  {
+    "plts_id": "batu-bingkung",
+    "tersedia": false,
+    "alasan": "Data BMS tidak tersedia; status berasal dari laporan dan analisis satelit"
+  },
+  {
+    "plts_id": "karimunjawa-contoh",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.718,
+    "minggu_tersisa": 19.1,
+    "fitur": {
+      "soh_bms": 0.8046,
+      "tren_soh": -0.0003,
+      "proyeksi_minggu": 13.7535
+    },
+    "riwayat_soh": [
+      {
+        "hari": 2141,
+        "soh_bms": 0.8302
+      },
+      {
+        "hari": 2148,
+        "soh_bms": 0.8233
+      },
+      {
+        "hari": 2155,
+        "soh_bms": 0.837
+      },
+      {
+        "hari": 2162,
+        "soh_bms": 0.8345
+      },
+      {
+        "hari": 2169,
+        "soh_bms": 0.8363
+      },
+      {
+        "hari": 2176,
+        "soh_bms": 0.8318
+      },
+      {
+        "hari": 2183,
+        "soh_bms": 0.8243
+      },
+      {
+        "hari": 2190,
+        "soh_bms": 0.8129
+      },
+      {
+        "hari": 2197,
+        "soh_bms": 0.8264
+      },
+      {
+        "hari": 2204,
+        "soh_bms": 0.8097
+      },
+      {
+        "hari": 2211,
+        "soh_bms": 0.8215
+      },
+      {
+        "hari": 2218,
+        "soh_bms": 0.8251
+      },
+      {
+        "hari": 2225,
+        "soh_bms": 0.8298
+      },
+      {
+        "hari": 2232,
+        "soh_bms": 0.826
+      },
+      {
+        "hari": 2239,
+        "soh_bms": 0.8286
+      },
+      {
+        "hari": 2246,
+        "soh_bms": 0.8269
+      },
+      {
+        "hari": 2253,
+        "soh_bms": 0.8278
+      },
+      {
+        "hari": 2260,
+        "soh_bms": 0.8304
+      },
+      {
+        "hari": 2267,
+        "soh_bms": 0.8243
+      },
+      {
+        "hari": 2274,
+        "soh_bms": 0.8248
+      },
+      {
+        "hari": 2281,
+        "soh_bms": 0.8342
+      },
+      {
+        "hari": 2288,
+        "soh_bms": 0.8147
+      },
+      {
+        "hari": 2295,
+        "soh_bms": 0.8097
+      },
+      {
+        "hari": 2302,
+        "soh_bms": 0.8272
+      },
+      {
+        "hari": 2309,
+        "soh_bms": 0.8116
+      },
+      {
+        "hari": 2316,
+        "soh_bms": 0.8152
+      },
+      {
+        "hari": 2323,
+        "soh_bms": 0.8236
+      },
+      {
+        "hari": 2330,
+        "soh_bms": 0.8125
+      },
+      {
+        "hari": 2337,
+        "soh_bms": 0.8217
+      },
+      {
+        "hari": 2344,
+        "soh_bms": 0.8286
+      },
+      {
+        "hari": 2351,
+        "soh_bms": 0.8217
+      },
+      {
+        "hari": 2358,
+        "soh_bms": 0.8112
+      },
+      {
+        "hari": 2365,
+        "soh_bms": 0.8198
+      },
+      {
+        "hari": 2372,
+        "soh_bms": 0.8298
+      },
+      {
+        "hari": 2379,
+        "soh_bms": 0.8208
+      },
+      {
+        "hari": 2386,
+        "soh_bms": 0.826
+      },
+      {
+        "hari": 2393,
+        "soh_bms": 0.8139
+      },
+      {
+        "hari": 2400,
+        "soh_bms": 0.8148
+      },
+      {
+        "hari": 2407,
+        "soh_bms": 0.8107
+      },
+      {
+        "hari": 2414,
+        "soh_bms": 0.8174
+      },
+      {
+        "hari": 2421,
+        "soh_bms": 0.8258
+      },
+      {
+        "hari": 2428,
+        "soh_bms": 0.8176
+      },
+      {
+        "hari": 2435,
+        "soh_bms": 0.7988
+      },
+      {
+        "hari": 2442,
+        "soh_bms": 0.8074
+      },
+      {
+        "hari": 2449,
+        "soh_bms": 0.8245
+      },
+      {
+        "hari": 2456,
+        "soh_bms": 0.8127
+      },
+      {
+        "hari": 2463,
+        "soh_bms": 0.806
+      },
+      {
+        "hari": 2470,
+        "soh_bms": 0.8436
+      },
+      {
+        "hari": 2477,
+        "soh_bms": 0.7928
+      },
+      {
+        "hari": 2484,
+        "soh_bms": 0.8175
+      },
+      {
+        "hari": 2491,
+        "soh_bms": 0.8035
+      },
+      {
+        "hari": 2498,
+        "soh_bms": 0.8
+      },
+      {
+        "hari": 2505,
+        "soh_bms": 0.8324
+      },
+      {
+        "hari": 2512,
+        "soh_bms": 0.8122
+      },
+      {
+        "hari": 2519,
+        "soh_bms": 0.8041
+      },
+      {
+        "hari": 2526,
+        "soh_bms": 0.7996
+      },
+      {
+        "hari": 2533,
+        "soh_bms": 0.8286
+      },
+      {
+        "hari": 2540,
+        "soh_bms": 0.811
+      },
+      {
+        "hari": 2547,
+        "soh_bms": 0.8168
+      },
+      {
+        "hari": 2554,
+        "soh_bms": 0.8057
+      },
+      {
+        "hari": 2561,
+        "soh_bms": 0.8269
+      },
+      {
+        "hari": 2568,
+        "soh_bms": 0.7961
+      },
+      {
+        "hari": 2575,
+        "soh_bms": 0.8316
+      },
+      {
+        "hari": 2582,
+        "soh_bms": 0.8189
+      },
+      {
+        "hari": 2589,
+        "soh_bms": 0.8099
+      },
+      {
+        "hari": 2596,
+        "soh_bms": 0.8003
+      },
+      {
+        "hari": 2603,
+        "soh_bms": 0.7978
+      },
+      {
+        "hari": 2610,
+        "soh_bms": 0.8001
+      },
+      {
+        "hari": 2617,
+        "soh_bms": 0.8059
+      },
+      {
+        "hari": 2624,
+        "soh_bms": 0.8306
+      },
+      {
+        "hari": 2631,
+        "soh_bms": 0.8168
+      },
+      {
+        "hari": 2638,
+        "soh_bms": 0.8004
+      },
+      {
+        "hari": 2645,
+        "soh_bms": 0.8186
+      },
+      {
+        "hari": 2652,
+        "soh_bms": 0.8184
+      },
+      {
+        "hari": 2659,
+        "soh_bms": 0.8207
+      },
+      {
+        "hari": 2666,
+        "soh_bms": 0.8213
+      },
+      {
+        "hari": 2673,
+        "soh_bms": 0.8158
+      },
+      {
+        "hari": 2680,
+        "soh_bms": 0.8154
+      },
+      {
+        "hari": 2687,
+        "soh_bms": 0.8119
+      },
+      {
+        "hari": 2694,
+        "soh_bms": 0.8042
+      },
+      {
+        "hari": 2701,
+        "soh_bms": 0.8323
+      },
+      {
+        "hari": 2708,
+        "soh_bms": 0.8089
+      },
+      {
+        "hari": 2715,
+        "soh_bms": 0.7939
+      },
+      {
+        "hari": 2722,
+        "soh_bms": 0.8233
+      },
+      {
+        "hari": 2729,
+        "soh_bms": 0.8099
+      },
+      {
+        "hari": 2736,
+        "soh_bms": 0.8262
+      },
+      {
+        "hari": 2743,
+        "soh_bms": 0.8022
+      },
+      {
+        "hari": 2750,
+        "soh_bms": 0.8081
+      },
+      {
+        "hari": 2757,
+        "soh_bms": 0.7962
+      },
+      {
+        "hari": 2764,
+        "soh_bms": 0.7901
+      },
+      {
+        "hari": 2771,
+        "soh_bms": 0.8051
+      },
+      {
+        "hari": 2778,
+        "soh_bms": 0.8038
+      },
+      {
+        "hari": 2785,
+        "soh_bms": 0.7884
+      },
+      {
+        "hari": 2792,
+        "soh_bms": 0.7734
+      },
+      {
+        "hari": 2799,
+        "soh_bms": 0.8009
+      },
+      {
+        "hari": 2806,
+        "soh_bms": 0.8121
+      },
+      {
+        "hari": 2813,
+        "soh_bms": 0.8221
+      },
+      {
+        "hari": 2820,
+        "soh_bms": 0.8068
+      },
+      {
+        "hari": 2827,
+        "soh_bms": 0.8017
+      },
+      {
+        "hari": 2834,
+        "soh_bms": 0.7916
+      },
+      {
+        "hari": 2841,
+        "soh_bms": 0.8148
+      },
+      {
+        "hari": 2848,
+        "soh_bms": 0.8045
+      },
+      {
+        "hari": 2855,
+        "soh_bms": 0.7895
+      },
+      {
+        "hari": 2862,
+        "soh_bms": 0.7964
+      }
+    ]
+  },
+  {
+    "plts_id": "genting-contoh",
+    "tersedia": true,
+    "label_data": "simulasi",
+    "p_gagal_26_minggu": 0.008,
+    "minggu_tersisa": 102.3,
+    "fitur": {
+      "soh_bms": 0.8588,
+      "tren_soh": -0.0004,
+      "proyeksi_minggu": 152.9538
+    },
+    "riwayat_soh": [
+      {
+        "hari": 741,
+        "soh_bms": 0.8956
+      },
+      {
+        "hari": 748,
+        "soh_bms": 0.8811
+      },
+      {
+        "hari": 755,
+        "soh_bms": 0.8939
+      },
+      {
+        "hari": 762,
+        "soh_bms": 0.8944
+      },
+      {
+        "hari": 769,
+        "soh_bms": 0.8898
+      },
+      {
+        "hari": 776,
+        "soh_bms": 0.9046
+      },
+      {
+        "hari": 783,
+        "soh_bms": 0.888
+      },
+      {
+        "hari": 790,
+        "soh_bms": 0.9005
+      },
+      {
+        "hari": 797,
+        "soh_bms": 0.8899
+      },
+      {
+        "hari": 804,
+        "soh_bms": 0.8846
+      },
+      {
+        "hari": 811,
+        "soh_bms": 0.8866
+      },
+      {
+        "hari": 818,
+        "soh_bms": 0.8863
+      },
+      {
+        "hari": 825,
+        "soh_bms": 0.8836
+      },
+      {
+        "hari": 832,
+        "soh_bms": 0.8808
+      },
+      {
+        "hari": 839,
+        "soh_bms": 0.8922
+      },
+      {
+        "hari": 846,
+        "soh_bms": 0.8881
+      },
+      {
+        "hari": 853,
+        "soh_bms": 0.898
+      },
+      {
+        "hari": 860,
+        "soh_bms": 0.8806
+      },
+      {
+        "hari": 867,
+        "soh_bms": 0.88
+      },
+      {
+        "hari": 874,
+        "soh_bms": 0.8846
+      },
+      {
+        "hari": 881,
+        "soh_bms": 0.8839
+      },
+      {
+        "hari": 888,
+        "soh_bms": 0.8878
+      },
+      {
+        "hari": 895,
+        "soh_bms": 0.8928
+      },
+      {
+        "hari": 902,
+        "soh_bms": 0.8785
+      },
+      {
+        "hari": 909,
+        "soh_bms": 0.8847
+      },
+      {
+        "hari": 916,
+        "soh_bms": 0.8967
+      },
+      {
+        "hari": 923,
+        "soh_bms": 0.8771
+      },
+      {
+        "hari": 930,
+        "soh_bms": 0.8761
+      },
+      {
+        "hari": 937,
+        "soh_bms": 0.8672
+      },
+      {
+        "hari": 944,
+        "soh_bms": 0.8788
+      },
+      {
+        "hari": 951,
+        "soh_bms": 0.8716
+      },
+      {
+        "hari": 958,
+        "soh_bms": 0.8643
+      },
+      {
+        "hari": 965,
+        "soh_bms": 0.8693
+      },
+      {
+        "hari": 972,
+        "soh_bms": 0.8966
+      },
+      {
+        "hari": 979,
+        "soh_bms": 0.8692
+      },
+      {
+        "hari": 986,
+        "soh_bms": 0.8994
+      },
+      {
+        "hari": 993,
+        "soh_bms": 0.8741
+      },
+      {
+        "hari": 1000,
+        "soh_bms": 0.8902
+      },
+      {
+        "hari": 1007,
+        "soh_bms": 0.882
+      },
+      {
+        "hari": 1014,
+        "soh_bms": 0.8852
+      },
+      {
+        "hari": 1021,
+        "soh_bms": 0.8723
+      },
+      {
+        "hari": 1028,
+        "soh_bms": 0.8847
+      },
+      {
+        "hari": 1035,
+        "soh_bms": 0.8834
+      },
+      {
+        "hari": 1042,
+        "soh_bms": 0.8794
+      },
+      {
+        "hari": 1049,
+        "soh_bms": 0.8729
+      },
+      {
+        "hari": 1056,
+        "soh_bms": 0.8824
+      },
+      {
+        "hari": 1063,
+        "soh_bms": 0.8733
+      },
+      {
+        "hari": 1070,
+        "soh_bms": 0.872
+      },
+      {
+        "hari": 1077,
+        "soh_bms": 0.8748
+      },
+      {
+        "hari": 1084,
+        "soh_bms": 0.8746
+      },
+      {
+        "hari": 1091,
+        "soh_bms": 0.8519
+      },
+      {
+        "hari": 1098,
+        "soh_bms": 0.8625
+      },
+      {
+        "hari": 1105,
+        "soh_bms": 0.8824
+      },
+      {
+        "hari": 1112,
+        "soh_bms": 0.8601
+      },
+      {
+        "hari": 1119,
+        "soh_bms": 0.8719
+      },
+      {
+        "hari": 1126,
+        "soh_bms": 0.8736
+      },
+      {
+        "hari": 1133,
+        "soh_bms": 0.8699
+      },
+      {
+        "hari": 1140,
+        "soh_bms": 0.8903
+      },
+      {
+        "hari": 1147,
+        "soh_bms": 0.8761
+      },
+      {
+        "hari": 1154,
+        "soh_bms": 0.8667
+      },
+      {
+        "hari": 1161,
+        "soh_bms": 0.8689
+      },
+      {
+        "hari": 1168,
+        "soh_bms": 0.8727
+      },
+      {
+        "hari": 1175,
+        "soh_bms": 0.8707
+      },
+      {
+        "hari": 1182,
+        "soh_bms": 0.8661
+      },
+      {
+        "hari": 1189,
+        "soh_bms": 0.8695
+      },
+      {
+        "hari": 1196,
+        "soh_bms": 0.8661
+      },
+      {
+        "hari": 1203,
+        "soh_bms": 0.8584
+      },
+      {
+        "hari": 1210,
+        "soh_bms": 0.8663
+      },
+      {
+        "hari": 1217,
+        "soh_bms": 0.8722
+      },
+      {
+        "hari": 1224,
+        "soh_bms": 0.8671
+      },
+      {
+        "hari": 1231,
+        "soh_bms": 0.8607
+      },
+      {
+        "hari": 1238,
+        "soh_bms": 0.8669
+      },
+      {
+        "hari": 1245,
+        "soh_bms": 0.8723
+      },
+      {
+        "hari": 1252,
+        "soh_bms": 0.8681
+      },
+      {
+        "hari": 1259,
+        "soh_bms": 0.87
+      },
+      {
+        "hari": 1266,
+        "soh_bms": 0.8661
+      },
+      {
+        "hari": 1273,
+        "soh_bms": 0.8513
+      },
+      {
+        "hari": 1280,
+        "soh_bms": 0.8502
+      },
+      {
+        "hari": 1287,
+        "soh_bms": 0.8508
+      },
+      {
+        "hari": 1294,
+        "soh_bms": 0.8553
+      },
+      {
+        "hari": 1301,
+        "soh_bms": 0.8651
+      },
+      {
+        "hari": 1308,
+        "soh_bms": 0.8648
+      },
+      {
+        "hari": 1315,
+        "soh_bms": 0.8644
+      },
+      {
+        "hari": 1322,
+        "soh_bms": 0.8491
+      },
+      {
+        "hari": 1329,
+        "soh_bms": 0.8779
+      },
+      {
+        "hari": 1336,
+        "soh_bms": 0.8471
+      },
+      {
+        "hari": 1343,
+        "soh_bms": 0.8738
+      },
+      {
+        "hari": 1350,
+        "soh_bms": 0.8624
+      },
+      {
+        "hari": 1357,
+        "soh_bms": 0.877
+      },
+      {
+        "hari": 1364,
+        "soh_bms": 0.8483
+      },
+      {
+        "hari": 1371,
+        "soh_bms": 0.867
+      },
+      {
+        "hari": 1378,
+        "soh_bms": 0.856
+      },
+      {
+        "hari": 1385,
+        "soh_bms": 0.8404
+      },
+      {
+        "hari": 1392,
+        "soh_bms": 0.8519
+      },
+      {
+        "hari": 1399,
+        "soh_bms": 0.876
+      },
+      {
+        "hari": 1406,
+        "soh_bms": 0.8584
+      },
+      {
+        "hari": 1413,
+        "soh_bms": 0.8661
+      },
+      {
+        "hari": 1420,
+        "soh_bms": 0.8482
+      },
+      {
+        "hari": 1427,
+        "soh_bms": 0.8642
+      },
+      {
+        "hari": 1434,
+        "soh_bms": 0.8565
+      },
+      {
+        "hari": 1441,
+        "soh_bms": 0.8618
+      },
+      {
+        "hari": 1448,
+        "soh_bms": 0.8504
+      },
+      {
+        "hari": 1455,
+        "soh_bms": 0.8518
+      },
+      {
+        "hari": 1462,
+        "soh_bms": 0.8447
+      }
+    ]
+  }
+]

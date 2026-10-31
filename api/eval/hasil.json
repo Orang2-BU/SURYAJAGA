@@ -1,0 +1,70 @@
+{
+ "model": "keluhan-v1 (TF-IDF n-gram huruf 2-5 + regresi logistik C=100)",
+ "hash_data_latih": "8c6b945fc05c2f67",
+ "hash_eval": "688c1a41ab89d6ce",
+ "n": 60,
+ "akurasi": 0.95,
+ "akurasi_dua_teratas": 0.983,
+ "per_kategori": {
+  "baterai": {
+   "n": 10,
+   "akurasi": 0.9
+  },
+  "beban": {
+   "n": 10,
+   "akurasi": 1.0
+  },
+  "inverter": {
+   "n": 10,
+   "akurasi": 1.0
+  },
+  "kabel": {
+   "n": 10,
+   "akurasi": 0.8
+  },
+  "lainnya": {
+   "n": 10,
+   "akurasi": 1.0
+  },
+  "panel": {
+   "n": 10,
+   "akurasi": 1.0
+  }
+ },
+ "ambang": {
+  "panduan": 0.8,
+  "konfirmasi": 0.5
+ },
+ "cabang": {
+  "panduan": 41,
+  "teknisi": 11,
+  "konfirmasi": 8
+ },
+ "akurasi_per_cabang": {
+  "panduan": 1.0,
+  "konfirmasi": 0.875,
+  "teknisi": 0.818
+ },
+ "robustness_stabil": "60/60",
+ "salah": [
+  {
+   "teks": "pas mendung dua hari warga mati lampu dari magrib",
+   "label": "baterai",
+   "prediksi": "lainnya",
+   "p": 0.471
+  },
+  {
+   "teks": "ada bau gosong dari panel box",
+   "label": "kabel",
+   "prediksi": "panel",
+   "p": 0.703
+  },
+  {
+   "teks": "kabel digigit tikus di ruang baterai",
+   "label": "kabel",
+   "prediksi": "baterai",
+   "p": 0.562
+  }
+ ],
+ "catatan": "Data latih dan eval ditulis tim (bukan pesan operator asli); akurasi ini batas atas."
+}

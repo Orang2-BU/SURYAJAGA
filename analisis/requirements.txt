@@ -1,0 +1,7 @@
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.8.0
+joblib==1.5.3
+h5py==3.16.0
+pystac-client==0.9.1
+rasterio==1.5.2

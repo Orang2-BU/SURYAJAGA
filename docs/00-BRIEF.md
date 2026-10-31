@@ -29,13 +29,15 @@
 | Budget & hosting | Rp0: Vercel (web) dan layanan gratis seperti Render (API); data satelit dan peta terbuka |
 
 ## 4. Tim
-| Nama | Skill | Peran |
+Label "Anggota N" dan "Ketua" di 03-ARCHITECTURE dan 04-TODO merujuk ke tabel ini (diperbarui 31 Okt 2026).
+
+| Label | Nama (NIM) | Peran |
 |---|---|---|
-| [Anggota 1] | Software engineer, AI | Ketua, model baterai dan klasifikasi keluhan |
-| [Anggota 2] | Software engineer | Web, peta, dasbor |
-| [Anggota 3] | Software engineer | Data satelit dan GIS (pengusul ide pemetaan lokasi) |
-| [Anggota 4] | Software engineer | API, integrasi, deploy |
-| [Anggota 5, rencana] | Teknik elektro/fisika (energi) | Validasi teknis baterai/PLTS, panduan perawatan, modul sensor tahap lanjut |
+| Ketua, Anggota 2 | Krisna Panca Dewa (E31241924) | Ketua tim, front end: web, peta, dasbor, tampilan operator |
+| Anggota 1 | Hadi Akram Ramadhan (E41250480) | AI: model baterai, uji silang, klasifikasi keluhan |
+| Anggota 3 | Mohammad Yassir Thoriq Fathirurrizqy (E41240985) | Analis data satelit dan geospasial: cahaya malam, Sentinel-2, estimasi lokasi |
+| Anggota 4 | Asyam Rafif Aubin Fawwaz (E41260791) | Back end: API, integrasi, deploy |
+| Anggota 5, rencana | Belum ditentukan | Bisnis: model bisnis, calon pembayar, validasi pasar |
 
 ## 5. Batasan & Asumsi
 - **Batasan:**
@@ -56,7 +58,7 @@
 | P1 | Kapan deadline pendaftaran Seno Hackathon? | Purwarupa Must 1-2 minggu | terbuka, user cek di dashboard |
 | P2 | Siapa anggota yang mendaftar NASA Earthdata? | Anggota 3 | terbuka |
 | P3 | Desa uji satelit selain Parang: lokasi dan koordinat pasti | Daftar kandidat di 03-ARCHITECTURE §3 | terjawab 30 Okt 2026: 5 desa terverifikasi dan dikunci di `desa_uji.json` |
-| P4 | Ambang kategori klasifikasi dan isi panduan perawatan perlu diperiksa ahli elektro | Disusun dari manual umum, ditinjau anggota ke-5 | terbuka |
+| P4 | Ambang kategori klasifikasi dan isi panduan perawatan perlu diperiksa ahli elektro | Disusun dari manual umum; ditinjau teknisi listrik atau dosen pendamping (anggota ke-5 untuk bisnis) | terbuka |
 | P5 | Apakah satu tim boleh mencampur mahasiswa dan dosen? | Tidak dipakai di docs | terbuka, tanya panitia |
 
 User menyetujui saran konsultan (30 Okt 2026) termasuk: rencana B satelit = cari desa lain, tetapi dengan daftar yang ditetapkan di muka dan semua hasil dilaporkan.

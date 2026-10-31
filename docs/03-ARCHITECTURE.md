@@ -45,7 +45,7 @@
 | CalonLokasi | id, nama, koordinat, penduduk, kk, kebutuhan, panel_kwp, baterai_kwh, waktu_tempuh, anggaran p10/p50/p90, biaya_rp_kwh, risiko, alasan, keputusan | - | `analisis/lokasi/estimasi.py` → `web/public/data/lokasi.json` |
 | Peringatan | id, plts_id, dibuat, status (terkirim/dibaca/ditangani/selesai/eskalasi), kategori, keyakinan | n-1 PLTS, 1-1 Percakapan | API (memori + `api/data/peringatan.json`) |
 | Pesan | id, percakapan_id, pengirim (sistem/operator/asisten), teks, waktu, klasifikasi | n-1 Percakapan | API |
-| TopikPanduan | kategori, judul, langkah[], tingkat_bahaya, wajib_teknisi | - | `api/data/panduan.json` (ditinjau anggota elektro) |
+| TopikPanduan | kategori, judul, langkah[], tingkat_bahaya, wajib_teknisi | - | `api/data/panduan.json` (ditinjau teknisi listrik) |
 
 **Desa uji satelit (dikunci 30 Okt 2026 di `analisis/cahaya_malam/desa_uji.json` sebelum data dilihat; koordinat dari OpenStreetMap Nominatim, titik pusat pulau/desa):**
 | Desa | Kelompok | Sumber kasus |

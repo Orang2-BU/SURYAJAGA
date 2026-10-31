@@ -102,7 +102,7 @@ Alur pendukung (Should): Pengawas membuka **Perencanaan Lokasi** Kab. Jepara, me
 | Calon lokasi (sel) | P7 | P8 | - | - | - | Hasil skrip analisis, statis |
 | Deret cahaya malam | P9 | P3, P9 | - | - | - | Hasil skrip, statis |
 | Prediksi baterai | P4, P10 | P3 | - | - | - | Hasil model, statis |
-| Topik panduan | P14 | P13 | - | - | - | Ditulis tim, ditinjau anggota elektro |
+| Topik panduan | P14 | P13 | - | - | - | Ditulis tim, ditinjau teknisi listrik |
 
 ## 6. Titik Keputusan AI *(pola: `docs/AI-PRIMITIVES.md`)*
 | Keputusan fuzzy | Rubrik / pertanyaan ke AI (tipe) | Kode yang memutuskan |
@@ -137,7 +137,7 @@ Alur pendukung (Should): Pengawas membuka **Perencanaan Lokasi** Kab. Jepara, me
 
 ## 8. Di Luar Scope
 - Integrasi WhatsApp asli (butuh akun Meta/Twilio): tahap setelah lolos.
-- Modul sensor fisik dan edge AI: dirancang di proposal, dibangun saat ada anggota elektro dan hardware.
+- Modul sensor fisik dan edge AI: dirancang di proposal, dibangun saat ada mitra elektronika dan hardware.
 - Login sungguhan, manajemen pengguna, multi-koperasi sungguhan.
 - Menambah/mengubah data PLTS dari UI.
 - Integrasi API ke Simkopdes sungguhan (hanya dirancang).

@@ -6,7 +6,7 @@ export const metadata = { title: "Detail peringatan" };
 
 const PLTS = Object.fromEntries(DAFTAR_PLTS.map(p => [p.id, { nama: p.nama, lokasi: `${p.desa}, ${p.kabupaten}` }]));
 
-// Id peringatan dibaca di klien (useParams) karena datanya dari API, bukan saat prerender.
+// Id peringatan dibaca di klien (useParams) karena datanya dari penyimpanan browser, bukan saat prerender.
 export default function HalamanDetailPeringatan() {
   return <div className="page-enter">
     <Suspense fallback={<p className="muted" aria-live="polite">Memuat peringatan...</p>}>

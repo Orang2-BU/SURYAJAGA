@@ -82,7 +82,7 @@ export function PetaPlts({ daftar }: { daftar: Plts[] }) {
     for (const l of DAFTAR_LAPISAN) petaRef.current?.setLayoutProperty(l, "visibility", l === id ? "visible" : "none");
   }
 
-  // Daftar terbaru untuk popup; titik diperbarui lewat setData, bukan membuat ulang peta (status bisa berubah dari API).
+  // Daftar terbaru untuk popup; titik diperbarui lewat setData, bukan membuat ulang peta (status bisa berubah karena peringatan).
   const daftarRef = useRef(daftar);
   useEffect(() => {
     daftarRef.current = daftar;

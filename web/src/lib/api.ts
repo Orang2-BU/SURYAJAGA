@@ -1,8 +1,9 @@
 import type { Tone } from "@/components/ui";
 import type { Plts } from "@/lib/data";
+import ATURAN from "./aturan.json";
 
-// Klien API SuryaJaga (FastAPI). Alamat dari NEXT_PUBLIC_API_URL; bawaan untuk pengembangan lokal.
-const DASAR = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// Purwarupa online: peringatan dan laporan malam disimpan di browser (aturannya sama dengan api/app/main.py,
+// diekspor ke aturan.json); klasifikasi keluhan berjalan di server Next.js (src/app/api, src/server).
 
 export type Jawaban = "ya" | "tidak";
 
@@ -43,22 +44,67 @@ export const STATUS_PERINGATAN: Record<StatusPeringatan, { label: string; tone: 
   selesai: { label: "Selesai", tone: "ok" },
 };
 
-async function minta<T>(jalur: string, init?: RequestInit): Promise<T> {
-  const r = await fetch(`${DASAR}${jalur}`, { ...init, headers: { "Content-Type": "application/json" }, cache: "no-store" });
-  if (!r.ok) throw new Error(`API ${r.status}`);
-  return r.json() as Promise<T>;
+/** Bentuk galat yang sama dengan API: status HTTP di pesan. */
+const galat = (status: number) => new Error(`API ${status}`);
+
+function baca<T>(kunci: string): T[] {
+  try {
+    return JSON.parse(localStorage.getItem(`suryajaga:${kunci}`) ?? "[]") as T[];
+  } catch {
+    throw galat(503); // penyimpanan browser diblokir: tampil sebagai layanan tidak tersedia
+  }
 }
 
-export const ambilLaporanMalam = (pltsId: string) => minta<RingkasanLaporanMalam>(`/laporan-malam/${encodeURIComponent(pltsId)}`);
+function tulis<T>(kunci: string, isi: T[]) {
+  localStorage.setItem(`suryajaga:${kunci}`, JSON.stringify(isi));
+}
 
-export const kirimLaporanMalam = (laporan: LaporanMalam) =>
-  minta<LaporanMalam>("/laporan-malam", { method: "POST", body: JSON.stringify(laporan) });
+const sekarang = () => new Date().toISOString();
 
-export const daftarPeringatan = (pltsId?: string) =>
-  minta<Peringatan[]>(pltsId ? `/peringatan?plts_id=${encodeURIComponent(pltsId)}` : "/peringatan");
+export const PESAN_MAKS = ATURAN.pesan_maks;
 
-export const kirimPeringatan = (data: Pick<Peringatan, "plts_id" | "kategori" | "pesan">) =>
-  minta<Peringatan>("/peringatan", { method: "POST", body: JSON.stringify(data) });
+/** True bila N malam terakhir berturut dijawab "tidak" atau tidak dibalas (F15), sama dengan api/app/main.py. */
+export function dugaanPadam(laporan: LaporanMalam[]): boolean {
+  const n = ATURAN.malam_berturut_padam;
+  const terakhir = [...laporan].sort((a, b) => a.tanggal.localeCompare(b.tanggal)).slice(-n);
+  return terakhir.length === n && terakhir.every(x => x.jawaban !== "ya");
+}
+
+export async function ambilLaporanMalam(pltsId: string): Promise<RingkasanLaporanMalam> {
+  const milik = baca<LaporanMalam>("laporan_malam").filter(x => x.plts_id === pltsId).sort((a, b) => a.tanggal.localeCompare(b.tanggal));
+  return { plts_id: pltsId, dugaan_padam: dugaanPadam(milik), malam_berturut: ATURAN.malam_berturut_padam, laporan: milik.slice(-30) };
+}
+
+/** Satu laporan per PLTS per malam: jawaban baru menggantikan yang lama. */
+export async function kirimLaporanMalam(laporan: LaporanMalam): Promise<LaporanMalam> {
+  const lain = baca<LaporanMalam>("laporan_malam").filter(x => x.plts_id !== laporan.plts_id || x.tanggal !== laporan.tanggal);
+  tulis("laporan_malam", [...lain, laporan]);
+  return laporan;
+}
+
+export async function daftarPeringatan(pltsId?: string): Promise<Peringatan[]> {
+  return baca<Peringatan>("peringatan").filter(p => !pltsId || p.plts_id === pltsId).sort((a, b) => b.dibuat.localeCompare(a.dibuat));
+}
+
+export async function kirimPeringatan(data: Pick<Peringatan, "plts_id" | "kategori" | "pesan">): Promise<Peringatan> {
+  if (!data.pesan.trim() || data.pesan.length > ATURAN.pesan_maks) throw galat(422);
+  const dibuat = sekarang();
+  const baru: Peringatan = { id: crypto.randomUUID().slice(0, 12), ...data, status: "terkirim", dibuat, riwayat: [{ status: "terkirim", waktu: dibuat }] };
+  tulis("peringatan", [...baca<Peringatan>("peringatan"), baru]);
+  return baru;
+}
+
+/** Transisi dibatasi seperti di API (aturan.json); "selesai" final. */
+export async function ubahStatusPeringatan(id: string, status: StatusPeringatan): Promise<Peringatan> {
+  const semua = baca<Peringatan>("peringatan");
+  const p = semua.find(x => x.id === id);
+  if (!p) throw galat(404);
+  if (!(ATURAN.transisi[p.status] as string[]).includes(status)) throw galat(409);
+  p.status = status;
+  p.riwayat.push({ status, waktu: sekarang() });
+  tulis("peringatan", semua);
+  return p;
+}
 
 const WAKTU = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" });
 
@@ -70,10 +116,7 @@ export function malamIni(sekarang = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(sekarang);
 }
 
-export const ubahStatusPeringatan = (id: string, status: StatusPeringatan) =>
-  minta<Peringatan>(`/peringatan/${encodeURIComponent(id)}`, { method: "PATCH", body: JSON.stringify({ status }) });
-
-// Asisten keluhan (F5). Keputusan dibuat API dari ambang di api/app/config.py; web hanya menampilkan.
+// Asisten keluhan (F5). Keputusan dibuat di server dari ambang api/app/config.py; web hanya menampilkan.
 
 export interface TopikPanduan {
   kategori: string;
@@ -93,9 +136,15 @@ export interface HasilKeluhan {
   pilihan?: { kategori: string; label: string }[];
 }
 
-export const kirimKeluhan = (teks: string) => minta<HasilKeluhan>("/keluhan", { method: "POST", body: JSON.stringify({ teks }) });
+async function server<T>(jalur: string, init?: RequestInit): Promise<T> {
+  const r = await fetch(`/api${jalur}`, { ...init, headers: { "Content-Type": "application/json" }, cache: "no-store" });
+  if (!r.ok) throw galat(r.status);
+  return r.json() as Promise<T>;
+}
 
-export const ambilPanduan = (kategori: string) => minta<TopikPanduan>(`/panduan/${encodeURIComponent(kategori)}`);
+export const kirimKeluhan = (teks: string) => server<HasilKeluhan>("/keluhan", { method: "POST", body: JSON.stringify({ teks }) });
+
+export const ambilPanduan = (kategori: string) => server<TopikPanduan>(`/panduan/${encodeURIComponent(kategori)}`);
 
 export interface PltsTerpantau extends Plts {
   peringatan: Peringatan | null;

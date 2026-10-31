@@ -8,7 +8,7 @@ import { STATUS, kalimatAlasan, labelData, type Plts } from "@/lib/data";
 const awalKecil = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
 const TANGGAL = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
-/** Kartu status P3, aturan sama dengan peta P2 (terapkanPeringatan). Bila API mati, status dari data. */
+/** Kartu status P3, aturan sama dengan peta P2 (terapkanPeringatan). Bila penyimpanan tidak bisa dibaca, status dari data. */
 export function KartuStatus({ plts }: { plts: Plts }) {
   const [kini, setKini] = useState<PltsTerpantau>({ ...plts, peringatan: null });
 

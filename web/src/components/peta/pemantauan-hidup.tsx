@@ -18,8 +18,8 @@ function KartuMetrik({ ikon: Ikon, label, nilai, total }: { ikon: LucideIcon; la
 }
 
 /**
- * Isi P2. Status awal dari plts.json; peringatan dari API diterapkan di atasnya (alur inti langkah 6),
- * dimuat ulang saat tab kembali aktif. Bila API mati, status dari data tetap tampil.
+ * Isi P2. Status awal dari plts.json; peringatan tersimpan diterapkan di atasnya (alur inti langkah 6),
+ * dimuat ulang saat tab kembali aktif. Bila penyimpanan tidak bisa dibaca, status dari data tetap tampil.
  */
 export function PemantauanHidup({ awal }: { awal: Plts[] }) {
   const [peringatan, setPeringatan] = useState<Peringatan[] | "gagal" | null>(null);
@@ -40,7 +40,7 @@ export function PemantauanHidup({ awal }: { awal: Plts[] }) {
   const terdampak = sorotan?.jumlah_jiwa ? `${ANGKA.format(sorotan.jumlah_jiwa)} jiwa` : sorotan?.jumlah_kk ? `${ANGKA.format(sorotan.jumlah_kk)} KK` : null;
 
   return <>
-    {peringatan === "gagal" && <p className="small muted catatan-api" role="status">Layanan peringatan belum terhubung: status di bawah dari data terakhir, tanpa perubahan dari peringatan.</p>}
+    {peringatan === "gagal" && <p className="small muted catatan-api" role="status">Peringatan tersimpan tidak bisa dibaca: status di bawah dari data terakhir, tanpa perubahan dari peringatan.</p>}
     <section className="metrics-grid" aria-label="Ringkasan status">
       <KartuMetrik ikon={CircleAlert} label="Kritis" nilai={jumlah.kritis} total={daftar.length} />
       <KartuMetrik ikon={TriangleAlert} label="Waspada" nilai={jumlah.waspada} total={daftar.length} />

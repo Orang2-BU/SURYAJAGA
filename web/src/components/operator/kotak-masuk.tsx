@@ -44,7 +44,7 @@ export function KotakMasuk({ pltsId, namaPlts }: { pltsId: string; namaPlts: str
 
   if (keadaan.tahap === "memuat") return <p className="pesan-sistem" aria-live="polite">Memuat pesan...</p>;
   if (keadaan.tahap === "gagal") return <div className="pesan-gelembung asisten" role="alert">
-    <p><strong>Layanan pesan belum bisa dihubungi.</strong> Periksa koneksi, lalu coba lagi.</p>
+    <p><strong>Pesan tidak bisa dibuka.</strong> Pastikan penyimpanan situs tidak diblokir, lalu coba lagi.</p>
     <button type="button" className="button secondary" onClick={() => { setKeadaan({ tahap: "memuat" }); setVersi(v => v + 1); }}><Icon icon={RotateCw} size={16} />Coba lagi</button>
   </div>;
 

@@ -28,7 +28,7 @@ export function TabelAset({ baris }: { baris: BarisAset[] }) {
 
   useEffect(() => {
     let batal = false;
-    // Bila API mati, status dari data tetap dipakai (P2 menampilkan catatannya).
+    // Bila penyimpanan tidak bisa dibaca, status dari data tetap dipakai (P2 menampilkan catatannya).
     daftarPeringatan().then(d => { if (!batal) setPeringatan(d); }, () => {});
     return () => { batal = true; };
   }, []);

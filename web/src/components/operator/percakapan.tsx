@@ -6,11 +6,9 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import { ArrowLeft, BellRing, Bot, CheckCheck, HardHat, RotateCw, Send } from "lucide-react";
 import { Badge, Icon } from "@/components/ui";
 import {
-  STATUS_PERINGATAN, ambilPanduan, daftarPeringatan, kirimKeluhan, ubahStatusPeringatan, waktuWib,
+  PESAN_MAKS, STATUS_PERINGATAN, ambilPanduan, daftarPeringatan, kirimKeluhan, ubahStatusPeringatan, waktuWib,
   type HasilKeluhan, type Peringatan, type StatusPeringatan, type TopikPanduan,
 } from "@/lib/api";
-
-const PESAN_MAKS = 500; // sama dengan api/app/config.py PESAN_MAKS
 
 type Pesan =
   | { jenis: "keluhan"; teks: string }

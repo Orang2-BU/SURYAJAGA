@@ -53,8 +53,8 @@ export function DetailPeringatan({ plts }: { plts: Record<string, { nama: string
     <Link className="button secondary" href="/peringatan">Kembali ke Peringatan</Link>
   </section>;
   if (keadaan.tahap === "gagal") return <section className="card kosong" role="alert">
-    <h2>Layanan peringatan belum bisa dihubungi</h2>
-    <p className="muted">Pastikan API SuryaJaga berjalan, lalu coba lagi.</p>
+    <h2>Peringatan tidak bisa dibuka</h2>
+    <p className="muted">Peringatan demo disimpan di browser ini. Pastikan penyimpanan situs tidak diblokir, lalu coba lagi.</p>
     <button type="button" className="button secondary" onClick={() => { setKeadaan({ tahap: "memuat" }); setVersi(v => v + 1); }}><Icon icon={RotateCw} size={16} />Coba lagi</button>
   </section>;
 

@@ -4,11 +4,9 @@ import Link from "next/link";
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowRight, Send } from "lucide-react";
 import { Badge, Icon, Modal } from "@/components/ui";
-import { KATEGORI_PERINGATAN, STATUS_PERINGATAN, daftarPeringatan, kirimPeringatan, waktuWib, type KategoriPeringatan, type Peringatan } from "@/lib/api";
+import { PESAN_MAKS, KATEGORI_PERINGATAN, STATUS_PERINGATAN, daftarPeringatan, kirimPeringatan, waktuWib, type KategoriPeringatan, type Peringatan } from "@/lib/api";
 
-const PESAN_MAKS = 500; // sama dengan api/app/config.py PESAN_MAKS
-
-/** Aksi utama P3 (F4): tulis peringatan untuk operator, kirim ke API, tampilkan status peringatan terakhir. */
+/** Aksi utama P3 (F4): tulis peringatan untuk operator, simpan, tampilkan status peringatan terakhir. */
 export function KirimPeringatan({ pltsId, penerima, kategoriAwal, pesanAwal }: {
   pltsId: string; penerima: string; kategoriAwal: KategoriPeringatan; pesanAwal: string;
 }) {
@@ -17,7 +15,7 @@ export function KirimPeringatan({ pltsId, penerima, kategoriAwal, pesanAwal }: {
   const [pesan, setPesan] = useState(pesanAwal);
   const [mengirim, setMengirim] = useState(false);
   const [galat, setGalat] = useState(false);
-  // undefined = memuat, null = API tidak terhubung
+  // undefined = memuat, null = belum ada atau tidak bisa dibaca
   const [terakhir, setTerakhir] = useState<Peringatan | null | undefined>(undefined);
   const [baruTerkirim, setBaruTerkirim] = useState(false);
 
@@ -72,7 +70,7 @@ export function KirimPeringatan({ pltsId, penerima, kategoriAwal, pesanAwal }: {
           <textarea id="pesan-peringatan" rows={5} required maxLength={PESAN_MAKS} value={pesan} onChange={e => setPesan(e.target.value)} aria-describedby="pesan-sisa" />
           <span id="pesan-sisa" className="small muted">{pesan.length}/{PESAN_MAKS} karakter. Dikirim ke {penerima}.</span>
         </div>
-        {galat && <p className="galat" role="alert">Peringatan belum terkirim karena layanan peringatan tidak bisa dihubungi. Coba sekali lagi.</p>}
+        {galat && <p className="galat" role="alert">Peringatan belum tersimpan karena penyimpanan browser tidak bisa dipakai. Coba sekali lagi.</p>}
         <div className="form-aksi">
           <button type="button" className="button secondary" onClick={() => setBuka(false)}>Batal</button>
           <button type="submit" className="button primary" disabled={mengirim || !pesan.trim()}>

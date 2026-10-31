@@ -1,0 +1,1 @@
+{"pesan_maks":500,"malam_berturut_padam":2,"transisi":{"terkirim":["dibaca","eskalasi"],"dibaca":["ditangani","eskalasi","selesai"],"ditangani":["eskalasi","selesai"],"eskalasi":["ditangani","selesai"],"selesai":[]}}

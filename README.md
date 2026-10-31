@@ -20,4 +20,4 @@ Perintah verifikasi lengkap ada di `docs/07-RULES.md`.
 
 ## Deploy
 
-API di Hugging Face Spaces (`deploy/huggingface/`), web di Vercel (root `web`). Langkahnya di `docs/DEPLOY.md`.
+Satu deploy di Vercel (root `web`): asisten keluhan berjalan di server Next.js dengan model dari `api/`. Langkahnya di `docs/DEPLOY.md`.

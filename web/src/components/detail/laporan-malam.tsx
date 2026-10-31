@@ -33,7 +33,7 @@ export function KartuLaporanMalam({ pltsId }: { pltsId: string }) {
     {data === null && <p className="muted" aria-live="polite">Memuat laporan malam...</p>}
     {data === "gagal" && <div className="bukti-kosong" role="alert">
       <MoonStar size={20} strokeWidth={1.75} aria-hidden />
-      <p>Layanan laporan malam belum bisa dihubungi. Bukti lain di halaman ini tetap berlaku.</p>
+      <p>Laporan malam tidak bisa dibaca dari penyimpanan browser. Bukti lain di halaman ini tetap berlaku.</p>
     </div>}
     {data !== null && data !== "gagal" && (data.laporan.length === 0
       ? <div className="bukti-kosong">

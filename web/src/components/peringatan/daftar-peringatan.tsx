@@ -9,7 +9,7 @@ import { KATEGORI_PERINGATAN, STATUS_PERINGATAN, daftarPeringatan, waktuWib, typ
 type Filter = "semua" | StatusPeringatan;
 type Keadaan = { tahap: "memuat" } | { tahap: "gagal" } | { tahap: "siap"; data: Peringatan[] };
 
-/** P5: semua peringatan dari API, difilter per status. Dimuat ulang saat tab kembali aktif agar status operator ikut terbaru. */
+/** P5: semua peringatan tersimpan, difilter per status. Dimuat ulang saat tab kembali aktif agar status operator ikut terbaru. */
 export function DaftarPeringatan({ plts }: { plts: Record<string, { nama: string; lokasi: string }> }) {
   const [keadaan, setKeadaan] = useState<Keadaan>({ tahap: "memuat" });
   const [filter, setFilter] = useState<Filter>("semua");
@@ -31,8 +31,8 @@ export function DaftarPeringatan({ plts }: { plts: Record<string, { nama: string
 
   if (keadaan.tahap === "memuat") return <section className="card" aria-busy="true"><p className="muted" aria-live="polite">Memuat peringatan...</p></section>;
   if (keadaan.tahap === "gagal") return <section className="card kosong" role="alert">
-    <h2>Layanan peringatan belum bisa dihubungi</h2>
-    <p className="muted">Daftar peringatan disimpan di API SuryaJaga. Pastikan API berjalan, lalu coba lagi.</p>
+    <h2>Peringatan tidak bisa dibuka</h2>
+    <p className="muted">Peringatan demo disimpan di browser ini. Pastikan penyimpanan situs tidak diblokir, lalu coba lagi.</p>
     {tombolMuat}
   </section>;
 

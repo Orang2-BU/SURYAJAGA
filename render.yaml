@@ -1,0 +1,16 @@
+# Blueprint Render untuk API SuryaJaga (panduan: docs/DEPLOY.md).
+services:
+  - type: web
+    name: suryajaga-api
+    runtime: python
+    plan: free
+    rootDir: api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.5"
+      # Alamat web di Vercel, dipisah koma bila lebih dari satu. Diisi setelah web online.
+      - key: SURYAJAGA_ASAL_WEB
+        sync: false

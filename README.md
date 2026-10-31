@@ -17,3 +17,7 @@ cd analisis && python -m venv .venv && .venv/Scripts/pip install -r requirements
 ```
 
 Perintah verifikasi lengkap ada di `docs/07-RULES.md`.
+
+## Deploy
+
+API di Render (`render.yaml`), web di Vercel (root `web`). Langkahnya di `docs/DEPLOY.md`.

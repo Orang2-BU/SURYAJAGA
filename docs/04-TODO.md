@@ -97,4 +97,4 @@
 | 31 Okt 2026 | Proposal dipangkas jadi 28 hlm: daftar tabel/gambar dihapus, BAB II dipadatkan (2.1-2.3), 3.3 tanpa daftar langkah, 3.4 Pengguna digabung ke 3.1, BAB IV dipadatkan (nilai aset ke 4.1, emisi jadi paragraf, risiko 6 baris), Tabel 1.1 dua kolom, BAB tidak lagi mulai di halaman baru. Cadangan 36 hlm: snbuild/buat_proposal2_36hlm.py |
 | 31 Okt 2026 | T15, T17, T18 selesai. Wilayah demo lokasi diganti ke Kab. Maluku Barat Daya (3T) atas permintaan user; data BPS Jateng terhalang verifikasi bot. 9 tangkapan layar produksi di `D:/Aplikasi/SENO ITS/purwarupa_tangkapan/`, 6 masuk Lampiran 2 proposal (34 hlm). Proposal 3.4.1 ditulis ulang sesuai metode estimasi |
 | 31 Okt 2026 | Commit awal dan push ke github.com/Orang2-BU/SURYAJAGA (main). T16 selesai: P9 dan P10 |
-| 31 Okt 2026 | Alur inti 6/6: P2 membaca peringatan (`terapkanPeringatan`); peringatan terakhir selesai → Dalam pemulihan. Peta memperbarui titik lewat setData |
+| 31 Okt 2026 | Alur inti 6/6: P2 dan kartu status P3 membaca peringatan (`terapkanPeringatan`); peringatan terakhir selesai → Dalam pemulihan. Peta memperbarui titik lewat setData |

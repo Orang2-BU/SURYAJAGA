@@ -1,19 +1,19 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, BatteryWarning, CalendarDays, CircleAlert, MoonStar, Satellite, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BatteryWarning, MoonStar, Satellite, Users } from "lucide-react";
 import { GrafikCahaya } from "@/components/detail/grafik-cahaya";
 import { KartuLaporanMalam } from "@/components/detail/laporan-malam";
 import { KartuPanel } from "@/components/detail/kartu-panel";
+import { KartuStatus } from "@/components/detail/kartu-status";
 import { KirimPeringatan } from "@/components/detail/kirim-peringatan";
 import { MenuAksi } from "@/components/detail/menu-aksi";
 import { Badge, type Tone } from "@/components/ui";
 import { AMBANG_BATERAI, tingkatBaterai, type TingkatBaterai } from "@/lib/ambang";
-import { CAHAYA, DAFTAR_PLTS, METRIK_BATERAI, PANEL, STATUS, cahayaUntuk, cariPlts, panelUntuk, kalimatAlasan, labelData, prediksiUntuk, type Plts, type PrediksiBaterai, type StatusCahaya } from "@/lib/data";
+import { CAHAYA, DAFTAR_PLTS, METRIK_BATERAI, PANEL, STATUS, cahayaUntuk, cariPlts, panelUntuk, kalimatAlasan, prediksiUntuk, type Plts, type PrediksiBaterai, type StatusCahaya } from "@/lib/data";
 
 const ANGKA = new Intl.NumberFormat("id-ID");
 const DESIMAL = new Intl.NumberFormat("id-ID", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const TREN = new Intl.NumberFormat("id-ID", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const TANGGAL =new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const persen = (x: number) => `${DESIMAL.format(x * 100)}%`;
 
 export function generateStaticParams() {
@@ -53,18 +53,7 @@ export default async function DetailPlts({ params }: PageProps<"/pemantauan/[id]
 
     <div className="telusuri">
       <div className="telusuri-kiri">
-        <article className="incident-card" aria-labelledby="status-judul">
-          <div className="incident-top">
-            <span className="incident-status"><CircleAlert size={14} strokeWidth={1.75} aria-hidden />Status saat ini</span>
-            <span>{labelData(plts)}</span>
-          </div>
-          <h2 id="status-judul">{status.label}</h2>
-          <p>{kalimatAlasan(plts.alasan_status)}</p>
-          <div className="incident-factors">
-            {plts.tanggal_laporan && <span><CalendarDays size={13} strokeWidth={1.75} aria-hidden />Dilaporkan {TANGGAL.format(new Date(plts.tanggal_laporan))}</span>}
-            {plts.label_data === "laporan" && <a href={plts.sumber} target="_blank" rel="noreferrer">Baca sumber laporan<ArrowUpRight size={13} strokeWidth={1.75} aria-hidden /></a>}
-          </div>
-        </article>
+        <KartuStatus plts={plts} />
 
         <section className="card" aria-labelledby="profil-judul">
           <h2 id="profil-judul">Profil PLTS</h2>

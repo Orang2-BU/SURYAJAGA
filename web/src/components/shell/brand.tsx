@@ -1,9 +1,7 @@
-/** Simbol sementara SuryaJaga (matahari di dalam perisai) sampai logo resmi dibuat di docs/brand. */
+/** Simbol SuryaJaga "Empat Penjaga", potongan kecil (master dan panduan di docs/brand). */
 function BrandSymbol() {
-  return <svg className="brand-symbol" viewBox="0 0 28 38" aria-hidden="true">
-    <path fill="var(--color-primary)" d="M14 1 27 6v12c0 9.3-5.6 16.3-13 19C6.6 34.3 1 27.3 1 18V6Z" />
-    <circle fill="var(--color-on-primary)" cx="14" cy="17" r="5" />
-    <path stroke="var(--color-on-primary)" strokeWidth="1.75" strokeLinecap="round" d="M14 7.5v2.5M14 24v2.5M4.5 17H7M21 17h2.5M7.3 10.3l1.8 1.8M18.9 21.9l1.8 1.8M7.3 23.7l1.8-1.8M18.9 12.1l1.8-1.8" />
+  return <svg className="brand-symbol" viewBox="24 24 208 208" aria-hidden="true">
+    <path fill="var(--color-primary)" fillRule="evenodd" d="M140 82L140 24.69A104 104 0 0 1 186.16 41.78L172.12 83.88L214.22 69.84A104 104 0 0 1 231.31 116L174 116A34 34 0 0 1 140 82ZM82 116L24.69 116A104 104 0 0 1 41.78 69.84L83.88 83.88L69.84 41.78A104 104 0 0 1 116 24.69L116 82A34 34 0 0 1 82 116ZM116 174L116 231.31A104 104 0 0 1 69.84 214.22L83.88 172.12L41.78 186.16A104 104 0 0 1 24.69 140L82 140A34 34 0 0 1 116 174ZM174 140L231.31 140A104 104 0 0 1 214.22 186.16L172.12 172.12L186.16 214.22A104 104 0 0 1 140 231.31L140 174A34 34 0 0 1 174 140Z" />
   </svg>;
 }
 

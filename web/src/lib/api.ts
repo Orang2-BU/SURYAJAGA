@@ -105,7 +105,7 @@ export interface PltsTerpantau extends Plts {
  * Status di peta setelah memperhitungkan peringatan (alur inti langkah 6). Peringatan terakhir yang selesai
  * mengubah PLTS kritis/waspada menjadi "dalam_pemulihan", bukan "normal": perbaikan belum dikonfirmasi data.
  */
-export function terapkanPeringatan(daftar: Plts[], semua: Peringatan[]): PltsTerpantau[] {
+export function terapkanPeringatan<T extends Plts>(daftar: T[], semua: Peringatan[]): (T & { peringatan: Peringatan | null })[] {
   return daftar.map(p => {
     const terakhir = semua.filter(x => x.plts_id === p.id).sort((a, b) => b.dibuat.localeCompare(a.dibuat))[0] ?? null;
     const pulih = terakhir?.status === "selesai" && (p.status === "kritis" || p.status === "waspada");

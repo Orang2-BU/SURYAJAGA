@@ -282,7 +282,7 @@ main { padding-top: 28px; min-height: calc(100dvh - 160px); }
 .button.inverse:hover { background: var(--color-neutral-fill); }
 .button-circle { height: 32px; width: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--color-canvas); }
 .button.secondary:hover { background: var(--color-surface-muted); }
-.tabel-gulir { overflow-x: auto; }
+.tabel-gulir { overflow-x: auto; position: relative; } /* relative: label sr-only absolut ikut tergulir, tidak melebarkan halaman */
 table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
 th { color: var(--color-on-surface-muted); font-weight: 400; font-size: 11px; padding: 0 8px 12px; white-space: nowrap; }
 th:first-child, td:first-child { padding-left: 0; }
@@ -467,10 +467,28 @@ ol.riwayat-malam.baris li { display: inline-flex; gap: 6px; padding: 6px 10px; b
   .tabel-peringatan .sel-plts { grid-column: 1; }
   .tabel-peringatan .sel-status { grid-column: 2; grid-row: 1 / span 2; text-align: right; }
   .tabel-peringatan .sel-kategori { grid-column: 1; color: var(--color-on-surface-muted); }
-  .tabel-peringatan .sel-waktu { grid-column: 1 / -1; color: var(--color-on-surface-muted); }
+  .tabel-peringatan .sel-waktu { grid-column: 1; color: var(--color-on-surface-muted); }
+  .tabel-peringatan .table-action { grid-column: 2; grid-row: 3; align-self: center; }
   .tabel-peringatan .sel-pesan { grid-column: 1 / -1; min-width: 0; max-width: none; font-size: 14px; }
 }
 @media (max-width: 1199px) { .modal .section-heading { flex-direction: row; align-items: center; } }
+
+/* T19: daftar PLTS (P4) dan detail peringatan (P6) */
+.urut { display: inline-flex; align-items: center; gap: 4px; background: transparent; color: inherit; font: inherit; padding: 0; min-height: 32px; border-radius: var(--radius-sm); }
+.urut:hover { color: var(--color-on-surface); }
+th.numeric .urut { justify-content: end; width: 100%; }
+@media (max-width: 767px) { .tabel-aset th:nth-child(3), .tabel-aset td:nth-child(3), .tabel-aset th:nth-child(4), .tabel-aset td:nth-child(4) { display: table-cell; } }
+.linimasa { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.linimasa li { position: relative; display: grid; grid-template-columns: 14px 1fr; gap: 12px; padding-bottom: 18px; }
+.linimasa li::before { content: ""; position: absolute; left: 6px; top: 14px; bottom: 0; width: 2px; background: var(--color-border); }
+.linimasa li:last-child::before { display: none; }
+.linimasa-titik { width: 14px; height: 14px; margin-top: 3px; border-radius: 50%; background: var(--color-surface); border: 3px solid var(--color-primary); }
+.linimasa li:last-child .linimasa-titik { background: var(--color-primary); }
+.linimasa strong { display: block; font-size: 14px; }
+.linimasa span { font-size: 12px; color: var(--color-on-surface-muted); }
+.daftar-sumber { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.daftar-sumber .text-link { display: inline-flex; align-items: center; gap: 4px; min-height: 32px; }
+.pesan-kutip { margin: 0; padding: 14px 16px; border-left: 3px solid var(--color-primary); background: var(--color-canvas); border-radius: var(--radius-sm); font-size: 14px; line-height: 1.6; }
 
 /* Alur inti langkah 6: P2 membaca peringatan */
 .catatan-api { margin: -12px 0 16px; }

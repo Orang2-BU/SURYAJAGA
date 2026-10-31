@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { BellRing, RotateCw } from "lucide-react";
+import { ArrowRight, BellRing, RotateCw } from "lucide-react";
 import { Badge, Icon } from "@/components/ui";
 import { KATEGORI_PERINGATAN, STATUS_PERINGATAN, daftarPeringatan, waktuWib, type Peringatan, type StatusPeringatan } from "@/lib/api";
 
@@ -62,7 +62,7 @@ export function DaftarPeringatan({ plts }: { plts: Record<string, { nama: string
       ? <p className="pesan-sistem">Tidak ada peringatan berstatus {filter === "semua" ? "apa pun" : STATUS_PERINGATAN[filter].label.toLowerCase()}.</p>
       : <div className="tabel-gulir">
         <table className="tabel-peringatan">
-          <thead><tr><th scope="col">PLTS</th><th scope="col">Jenis masalah</th><th scope="col">Status</th><th scope="col">Dikirim</th><th scope="col">Pesan</th></tr></thead>
+          <thead><tr><th scope="col">PLTS</th><th scope="col">Jenis masalah</th><th scope="col">Status</th><th scope="col">Dikirim</th><th scope="col">Pesan</th><th scope="col"><span className="sr-only">Aksi</span></th></tr></thead>
           <tbody>
             {tampil.map(p => {
               const info = plts[p.plts_id];
@@ -74,6 +74,7 @@ export function DaftarPeringatan({ plts }: { plts: Record<string, { nama: string
                   {ubah && ubah.status !== "terkirim" && <span className="table-sub">Diperbarui {waktuWib(ubah.waktu)}</span>}</td>
                 <td className="sel-waktu nowrap">{waktuWib(p.dibuat)}</td>
                 <td className="sel-pesan">{p.pesan}</td>
+                <td className="table-action"><Link className="icon-button" href={`/peringatan/${p.id}`} aria-label={`Buka detail peringatan ${info?.nama ?? p.plts_id}`}><Icon icon={ArrowRight} size={16} /></Link></td>
               </tr>;
             })}
           </tbody>

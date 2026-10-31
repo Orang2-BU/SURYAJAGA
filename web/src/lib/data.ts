@@ -128,7 +128,7 @@ export interface KinerjaAmbang { ambang: number; recall: number; presisi: number
 
 /** Metrik lengkap untuk P10. Diambil dari metrik.json apa adanya (ditulis analisis/baterai/latih.py). */
 export const EVALUASI_BATERAI: {
-  data: string; catatan_metode: string; pr_auc: number; jumlah_baterai: { latih: number; uji: number };
+  data: string; catatan_metode: string; hash_data: string; pr_auc: number; jumlah_baterai: { latih: number; uji: number };
   jumlah_catatan_uji: number; positif_uji: number; per_ambang: KinerjaAmbang[];
   pembanding_tanpa_ml: { aturan: string; recall: number; presisi: number };
   fitur_penting: { fitur: string; nama: string; kontribusi: number }[];

@@ -30,12 +30,12 @@
 | T16 | P9 Cahaya Malam + P10 Model Baterai | Anggota 3 | Must | ✅ | 31 Okt: P10 kesimpulan (urutan risiko tepat, ambang perlu kalibrasi), PR-AUC simulasi vs sel nyata dengan penanda tebakan acak, tabel per ambang (simulasi dan HUST) + pembanding aturan tanpa model, fitur (penurunan PR-AUC bila diacak), data dan metode, unduh metrik. P9 hasil negatif 5/5 sinyal lemah apa adanya, tabel semua desa uji, aturan yang dikunci, grafik kelima desa, unduh data. Dicek 1440/768/375 |
 | T17 | Estimasi lokasi (wilayah demo diganti Kab. Maluku Barat Daya, 3T, Q13) | Anggota 3 | Should | ✅ | 31 Okt: `lokasi/unduh.py` (WorldPop 2020 100 m, waktu tempuh Weiss lewat WCS MAP, OSM) + `lokasi/estimasi.py` (permukiman dari WorldPop, kebutuhan 1,5 kWh/KK, panel dari NASA POWER, anggaran Monte Carlo 5.000 sampel sebaran ESMAP 2022 × logistik, biaya Rp/kWh vs bahan bakar genset, risiko berbasis aturan). Total penduduk kotak demo 77.655 (cek kewajaran). 115 permukiman: 10 prioritas, 85 pendampingan, 20 perlu skema perawatan. Semua 1,2-1,4x bahan bakar genset, jadi biaya tidak dipakai sebagai syarat. 13 test |
 | T18 | P7 Perencanaan Lokasi + P8 Rincian | Anggota 2 | Should | ✅ | 31 Okt: P7 metrik + peta titik (ukuran = KK, warna = keputusan) + sorotan + 12 calon teratas; P8 risiko + alasan, ukuran sistem, anggaran (rentang 80%), efektivitas vs genset, akses. Dicek 1440 |
-| T19 | P4, P6, P11, P15, P16 | Anggota 2 | Should | ⬜ | — |
+| T19 | P4, P6, P11, P15, P16 | Anggota 2 | Should | ✅ | 31 Okt: P4 tabel urut (status, nama, peluang baterai, kapasitas) + filter status + ekspor CSV (F10, F12), status mengikuti peringatan; P6 linimasa status, tandai eskalasi ditangani, pesan, tautan PLTS (isi percakapan belum disimpan server, ditulis terbuka); P11 sumber data bertautan berlabel asli/simulasi/estimasi, versi model, sumber kasus, asumsi, batasan; P5 punya tautan ke P6. P15/P16 dari T1. Dicek 1440/768/375. Perbaikan: `.tabel-gulir` relative agar label sr-only tidak melebarkan halaman |
 | T20 | Deploy + uji alur inti online | Anggota 4 | Must | ⬜ | — |
 | T21 | Video demo + tangkapan layar + update Tabel 3.3 proposal | Ketua | Must | ⬜ | — |
 | T9b | P2 lapisan peta (Q10) + tautan Copernicus di P3 | Anggota 2 | Should | ✅ | 30 Okt: 4 lapisan (OSM, foto Esri, Sentinel-2 2024 EOX, cahaya malam NASA GIBS 2016) dengan keterangan dan atribusi, proyeksi globe dengan animasi masuk (mati bila reduced-motion); dicek 1440 dan 375, tanpa scroll horizontal. Lisensi non-komersial dicatat di Q10 |
 | T22a | F14 Filter peta per status | — | Could | ⬜ | Fitur kecil bernilai besar |
-| T22b | F12 Ekspor CSV kondisi aset | — | Could | ⬜ | Fitur kecil bernilai besar |
+| T22b | F12 Ekspor CSV kondisi aset | — | Could | ✅ | Dikerjakan di P4 (T19) |
 | T22c | F13 Bandingkan dua calon lokasi | — | Could | ⬜ | — |
 | T22d | P14 Panduan Perawatan + P17 Pengaturan Ambang | — | Could | ⬜ | — |
 
@@ -57,14 +57,14 @@
 | P1 | Pilih Peran | Must | ✅ | Cookie peran + tanda terakhir dipakai |
 | P2 | Peta Pemantauan | Must | ✅ | Peta, metrik, sorotan, tabel; 1440/375 |
 | P3 | Detail PLTS | Must | ✅ | Status, profil, prediksi baterai, grafik cahaya malam; aksi kirim di T14 |
-| P4 | Daftar PLTS | Should | ⬜ | — |
+| P4 | Daftar PLTS | Should | ✅ | Urut, filter, ekspor CSV |
 | P5 | Peringatan | Must | ✅ | Daftar + filter status; 375/768/1440 |
-| P6 | Detail Peringatan | Should | ⬜ | — |
+| P6 | Detail Peringatan | Should | ✅ | Linimasa + eskalasi ditangani |
 | P7 | Perencanaan Lokasi | Should | ✅ | Maluku Barat Daya; 1440 |
 | P8 | Rincian Calon Lokasi | Should | ✅ | Estimasi lengkap |
 | P9 | Analisis Cahaya Malam | Must | ✅ | Hasil negatif apa adanya; 5 grafik |
 | P10 | Model Baterai | Must | ✅ | Simulasi + uji silang HUST |
-| P11 | Metodologi & Sumber | Should | ⬜ | — |
+| P11 | Metodologi & Sumber | Should | ✅ | Sumber, versi, asumsi, batasan |
 | P12 | Kotak Masuk Operator | Must | ✅ | Laporan malam + peringatan + tautan percakapan |
 | P13 | Percakapan Asisten | Must | ✅ | Panduan, konfirmasi, teknisi, selesai; 375 |
 | P14 | Panduan Perawatan | Could | ⬜ | — |
@@ -98,3 +98,4 @@
 | 31 Okt 2026 | T15, T17, T18 selesai. Wilayah demo lokasi diganti ke Kab. Maluku Barat Daya (3T) atas permintaan user; data BPS Jateng terhalang verifikasi bot. 9 tangkapan layar produksi di `D:/Aplikasi/SENO ITS/purwarupa_tangkapan/`, 6 masuk Lampiran 2 proposal (34 hlm). Proposal 3.4.1 ditulis ulang sesuai metode estimasi |
 | 31 Okt 2026 | Commit awal dan push ke github.com/Orang2-BU/SURYAJAGA (main). T16 selesai: P9 dan P10 |
 | 31 Okt 2026 | Alur inti 6/6: P2 dan kartu status P3 membaca peringatan (`terapkanPeringatan`); peringatan terakhir selesai → Dalam pemulihan. Peta memperbarui titik lewat setData |
+| 31 Okt 2026 | T19 selesai: P4, P6, P11; tidak ada lagi tautan buntu dari halaman yang sudah jadi |

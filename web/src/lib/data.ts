@@ -124,6 +124,18 @@ export const METRIK_BATERAI: { model: string; horizon_minggu: number; mae_minggu
   mae_minggu: metrikMentah.mae_minggu_tersisa.nilai,
 };
 
+export interface KinerjaAmbang { ambang: number; recall: number; presisi: number; recall_aus: number; recall_mendadak: number | null }
+
+/** Metrik lengkap untuk P10. Diambil dari metrik.json apa adanya (ditulis analisis/baterai/latih.py). */
+export const EVALUASI_BATERAI: {
+  data: string; catatan_metode: string; pr_auc: number; jumlah_baterai: { latih: number; uji: number };
+  jumlah_catatan_uji: number; positif_uji: number; per_ambang: KinerjaAmbang[];
+  pembanding_tanpa_ml: { aturan: string; recall: number; presisi: number };
+  fitur_penting: { fitur: string; nama: string; kontribusi: number }[];
+  uji_silang: { dataset: string; pemetaan: string; jumlah_sel: number; jumlah_catatan: number; positif: number; pr_auc: number;
+    per_ambang: KinerjaAmbang[]; median_p_pada_positif: number };
+} = metrikMentah;
+
 // Cahaya malam desa uji (ditulis analisis/cahaya_malam/analisis.py, aturan 03-ARCHITECTURE Q11).
 
 export type StatusCahaya = "terdeteksi" | "tidak_terdeteksi" | "sinyal_lemah";

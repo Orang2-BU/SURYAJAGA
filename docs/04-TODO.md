@@ -27,7 +27,7 @@
 | T15b | Laporan malam operator (F15) | Anggota 2 | Must | ✅ | 31 Okt: P12 (bingkai pesan 480px) dengan jawaban cepat Ya/Tidak + riwayat 7 malam + daftar peringatan; kartu P3 "Laporan malam operator" (dugaan padam, perlu dipantau, menyala, belum ada, API mati). Dicek: jawab di P12 tercermin di P3; API mati menampilkan pesan + Coba lagi; 375 tanpa scroll horizontal. vitest 22 passed. P12 sisa (percakapan P13, klasifikasi) tetap di T15 |
 | T7b | Kondisi panel dari Sentinel-2 (F16) | Anggota 3 | Should | ✅ | 31 Okt: `panel/analisis.py` (pystac-client + rasterio, Planetary Computer; hanya jendela kecil COG yang dibaca), aturan dikunci sebelum data dilihat. Hasil 2017-2026: **Sembur turun 0,71** (NDVI 0,83 → 0,12, cocok dengan pembangunan PLTS Des 2025: cek kewajaran lolos); Burung Loe turun 0,28 (area panel tertutup vegetasi 2018-2020 lalu dibersihkan, sebab belum diketahui); Parang stabil (panel fisik masih ada walau padam: foto siang tidak melihat padam); Batu Bingkung stabil (2026 tanpa adegan cerah). Bug jendela SCL 20 m ditemukan dan diperbaiki sebelum hasil dipakai (hasil putaran salah dibuang). Kartu P3 + state tanpa poligon OSM. pytest 6 test panel |
 | T6b | Cek akses SDGSAT-1 (F17) | Anggota 3 | Could | ⛔ | 31 Okt: data Glimmer Imager (cahaya malam 10-40 m) gratis untuk riset lewat SDGSAT-1 Open Science Program (www.sdgsat.ac.cn), terbuka untuk pengguna internasional (106 negara). Akun tim sudah dibuat dan adegan GIU 21 Okt 2026 yang mencakup Parang ditemukan (KX10_GIU_20261021_E110.42_S4.55, ±750 MB), tetapi kuota unduh akun 0. 31 Okt: proposal (SDG 7, 6 bulan, data arsip GIU) dikirim user dan diterima CBAS; peninjauan 2-4 minggu. Draf: `docs/riset/sdgsat-proposal.md` |
-| T16 | P9 Cahaya Malam + P10 Model Baterai | Anggota 3 | Must | ⬜ | — |
+| T16 | P9 Cahaya Malam + P10 Model Baterai | Anggota 3 | Must | ✅ | 31 Okt: P10 kesimpulan (urutan risiko tepat, ambang perlu kalibrasi), PR-AUC simulasi vs sel nyata dengan penanda tebakan acak, tabel per ambang (simulasi dan HUST) + pembanding aturan tanpa model, fitur (penurunan PR-AUC bila diacak), data dan metode, unduh metrik. P9 hasil negatif 5/5 sinyal lemah apa adanya, tabel semua desa uji, aturan yang dikunci, grafik kelima desa, unduh data. Dicek 1440/768/375 |
 | T17 | Estimasi lokasi (wilayah demo diganti Kab. Maluku Barat Daya, 3T, Q13) | Anggota 3 | Should | ✅ | 31 Okt: `lokasi/unduh.py` (WorldPop 2020 100 m, waktu tempuh Weiss lewat WCS MAP, OSM) + `lokasi/estimasi.py` (permukiman dari WorldPop, kebutuhan 1,5 kWh/KK, panel dari NASA POWER, anggaran Monte Carlo 5.000 sampel sebaran ESMAP 2022 × logistik, biaya Rp/kWh vs bahan bakar genset, risiko berbasis aturan). Total penduduk kotak demo 77.655 (cek kewajaran). 115 permukiman: 10 prioritas, 85 pendampingan, 20 perlu skema perawatan. Semua 1,2-1,4x bahan bakar genset, jadi biaya tidak dipakai sebagai syarat. 13 test |
 | T18 | P7 Perencanaan Lokasi + P8 Rincian | Anggota 2 | Should | ✅ | 31 Okt: P7 metrik + peta titik (ukuran = KK, warna = keputusan) + sorotan + 12 calon teratas; P8 risiko + alasan, ukuran sistem, anggaran (rentang 80%), efektivitas vs genset, akses. Dicek 1440 |
 | T19 | P4, P6, P11, P15, P16 | Anggota 2 | Should | ⬜ | — |
@@ -62,14 +62,14 @@
 | P6 | Detail Peringatan | Should | ⬜ | — |
 | P7 | Perencanaan Lokasi | Should | ✅ | Maluku Barat Daya; 1440 |
 | P8 | Rincian Calon Lokasi | Should | ✅ | Estimasi lengkap |
-| P9 | Analisis Cahaya Malam | Must | ⬜ | — |
-| P10 | Model Baterai | Must | ⬜ | — |
+| P9 | Analisis Cahaya Malam | Must | ✅ | Hasil negatif apa adanya; 5 grafik |
+| P10 | Model Baterai | Must | ✅ | Simulasi + uji silang HUST |
 | P11 | Metodologi & Sumber | Should | ⬜ | — |
 | P12 | Kotak Masuk Operator | Must | ✅ | Laporan malam + peringatan + tautan percakapan |
 | P13 | Percakapan Asisten | Must | ✅ | Panduan, konfirmasi, teknisi, selesai; 375 |
 | P14 | Panduan Perawatan | Could | ⬜ | — |
-| P15 | Tidak Ditemukan | Should | ⬜ | — |
-| P16 | Terjadi Kesalahan | Should | ⬜ | — |
+| P15 | Tidak Ditemukan | Should | ✅ | Dibuat di T1 (`not-found.tsx`) |
+| P16 | Terjadi Kesalahan | Should | ✅ | Dibuat di T1 (`error.tsx`) |
 | P17 | Pengaturan Ambang | Could | ⬜ | — |
 
 ## Scope Cut
@@ -96,3 +96,4 @@
 | 31 Okt 2026 | Proposal diringkas jadi 36 hlm: narasi langsung ke sistem sekarang (laporan malam + Sentinel-2, cahaya malam cukup satu kalimat alasan), 3.5.4 asisten ditulis sesuai purwarupa (klasifikasi, tanpa LLM), Tabel 3.3 diperbarui, Gambar PR-AUC v1/v2 dan subbab 2.4 dihapus, regulasi jadi paragraf. Klaim wawancara dihapus: validasi dijadwalkan di bootcamp/main event. Cadangan: snbuild/proposal_sebelum_ringkas.* |
 | 31 Okt 2026 | Proposal dipangkas jadi 28 hlm: daftar tabel/gambar dihapus, BAB II dipadatkan (2.1-2.3), 3.3 tanpa daftar langkah, 3.4 Pengguna digabung ke 3.1, BAB IV dipadatkan (nilai aset ke 4.1, emisi jadi paragraf, risiko 6 baris), Tabel 1.1 dua kolom, BAB tidak lagi mulai di halaman baru. Cadangan 36 hlm: snbuild/buat_proposal2_36hlm.py |
 | 31 Okt 2026 | T15, T17, T18 selesai. Wilayah demo lokasi diganti ke Kab. Maluku Barat Daya (3T) atas permintaan user; data BPS Jateng terhalang verifikasi bot. 9 tangkapan layar produksi di `D:/Aplikasi/SENO ITS/purwarupa_tangkapan/`, 6 masuk Lampiran 2 proposal (34 hlm). Proposal 3.4.1 ditulis ulang sesuai metode estimasi |
+| 31 Okt 2026 | Commit awal dan push ke github.com/Orang2-BU/SURYAJAGA (main). T16 selesai: P9 dan P10 |
